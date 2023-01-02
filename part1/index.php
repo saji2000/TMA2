@@ -4,13 +4,23 @@
     try{
         $conn = create_db();
         echo "worked praise God";
-        close_connection($conn);
-    
     }
-    
+
     catch(Exception $e){
-        echo "db already created and $e";
+        $conn = connect_db();
+        echo "connected to db";
     }
+
+    try {
+        create_tables($conn);
+        echo "Created the tables";
+    }
+
+    catch(Exception $e){
+        echo "Tables already exist $e";
+    }
+
+    close_connection($conn);
 ?>
 
 <!DOCTYPE html>
