@@ -16,13 +16,8 @@ function create_db(){
 
     // Create database
     $sql = "CREATE DATABASE part1;";
-    
 
-    if ($conn->query($sql) === TRUE) {
-        echo "Database created successfully";
-    } else {
-        echo "Error creating database: " . $conn->error;
-    }
+    mysqli_query($conn, $sql);
 
     return $conn;
 }
@@ -43,7 +38,10 @@ function connect_db(){
 // creating the tbales
 function create_tables($conn){
 
-    $tables = "CREATE TABLE users(id int , name varchar(255), email varchar(255), password varchar(255), PRIMARY KEY (id));
+    $tables = 
+    
+        "CREATE TABLE users(id int , name varchar(255), email varchar(255), password varchar(255), PRIMARY KEY (id));
+
         CREATE TABLE bookmarks(website varchar(255), user_id int, FOREIGN KEY (user_id) REFERENCES users(id));";
     
     if (mysqli_multi_query($conn, $tables) === TRUE) {
@@ -60,9 +58,9 @@ function close_connection($conn){
 
 function setup_database(){
     try{
+        echo "here going in";
+
         $conn = create_db();
-        $conn = connect_db();
-        echo "worked praise God and here the $conn";
     }
 
     catch(Exception $e){
@@ -76,7 +74,7 @@ function setup_database(){
     }
 
     catch(Exception $e){
-        echo "Tables already exist $e";
+        echo "Tables already exist";
     }
 
     return $conn;
