@@ -39,7 +39,7 @@ function connect_db(){
 function create_tables($conn){
 
     $tables = 
-    
+
         "CREATE TABLE users(id int , name varchar(255), email varchar(255), password varchar(255), PRIMARY KEY (id));
 
         CREATE TABLE bookmarks(website varchar(255), user_id int, FOREIGN KEY (user_id) REFERENCES users(id));";
@@ -58,23 +58,18 @@ function close_connection($conn){
 
 function setup_database(){
     try{
-        echo "here going in";
-
         $conn = create_db();
     }
 
     catch(Exception $e){
         $conn = connect_db();
-        echo "connected to db";
     }
 
     try {
         create_tables($conn);
-        echo "Created the tables";
     }
 
     catch(Exception $e){
-        echo "Tables already exist";
     }
 
     return $conn;

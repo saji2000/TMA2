@@ -1,19 +1,24 @@
 
 <html>
 	<head>
-		<title>Bookmark App Login</title>
+		<title>Sign-In/Sign-Up</title>
 		<link rel="stylesheet" type="text/css" href="../shared/style.css">
 		<meta charset="utf-8">
 	</head>
 	
-	<body class="homebody">
-			<header class="homeheader"> 
-			<h1 class="headerLink"><a href="../tma2.htm">Bookmarking App</a></h1>
-			
-			</header>
-	
-			<div class="homecontent">	
-<!-- <?php 
+	<body class = "body">
+			<div>	
+            <h1><a href="../tma.htm">Bookmarking App</a></h1>
+
+            <form action = "sign_up.php" method= "POST">
+                <!--form for inputs for login-->
+                    <input type ="text" name = "name" placeholder ="Enter Name"><br><br>
+                    <input type ="email" name = "email" placeholder ="Enter Email"><br><br>
+                    <input type ="text" name = "pass" placeholder ="Enter Password"><br><br>
+                    <button type ="submit">Sign-Up</button>
+                </form>
+
+<?php 
 
     include "db_connection.php";
 
@@ -24,32 +29,19 @@
 
     $email = $_POST['email'];
     $pass = $_POST['pass'];
+    $name = $_POST['name'];
 
-    // $query = "SELECT * FROM users";
+    echo "$email and $pass";
 
-    // if(!($result=mysqli_query($conn,$database))){
-    //     die("<p> Could not execute query </p>");
-    // }
-    // if(mysqli_num_rows($result)<=0){
-    //     print('<h1>Please Log In Below: </h1>
-    //     <p><strong>You have entered the wrong email or password, please try again.</strong></p>
-    //             <form action = "login.php" method= "POST">
-    //             <!--form for inputs for login-->
-    //                 <input type ="email" name = "email" placeholder ="Enter Email"><br><br>
-    //                 <input type ="text" name = "pass" placeholder ="Enter Password"><br><br>
-    //                 <button type ="submit">Log In</button> 
-    //             </form>
-    //             <p><strong>OR </strong></p><a href="register.php">register</a>');
-    // }else{
-    //     $row = mysqli_fetch_assoc($result);
-    //     $_SESSION['UserID'] = $row['UserID'];
-    //     // header("Location:main.php");
-    // }
+    $query = "SELECT * FROM users WHERE email = '$email' AND pass = '$pass';";
+
+    if(!($result=mysqli_query($conn,$database))){
+        die("<p> Could not execute query </p>");
+    }
+    echo "here";
+    
     close_connection($conn);
-?> -->
+?> 
 </div>
-	<footer class="homefooter">
-			<p>Website created by Su Gao. It is assignment 2 part 1 for COMP466.</p>
-			</footer>
-	</body>
+
 </html>
