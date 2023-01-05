@@ -21,12 +21,11 @@
 			<div>	
             <h3><a href="../tma.htm">Bookmarking App</a></h3>
 
-            <form action = "sign_up.php" method= "POST">
+            <form action = "sign_in.php" method= "POST">
                     <!--form for inputs for login-->
-                    <input type ="text" name = "name" placeholder ="Enter Name" required><br><br>
                     <input type ="email" name = "email" placeholder ="Enter Email" required><br><br>
                     <input type ="text" name = "pass" placeholder ="Enter Password" required><br><br>
-                    <button type ="submit">Sign-Up</button>
+                    <button type ="submit">Sign-In</button>
             </form>
 
 <?php 
@@ -39,39 +38,46 @@
 
     $email = $_POST['email'];
     $pass = $_POST['pass'];
-    $name = $_POST['name'];
 
-    $id = rand(1, 1000);
+    // $id = rand(1, 1000);
 
-    $query = "SELECT * FROM users WHERE email = '$email';";
+    $query = "SELECT * FROM users WHERE email = '$email' AND password = '$pass';";
 
     $result = mysqli_query($conn, $query);
 
-    if(mysqli_num_rows($result) > 0){
+    if(mysqli_num_rows($result) == 0){
 
-        echo " This email is already used! ";
+        echo " Wrong passowrd or email ";
 
     }
 
-    else{
-        $query = "INSERT INTO users(id, name, email, password) VALUES($id, '$name', '$email', '$pass');";
-
-
-        while(mysqli_query($conn, $query)==false){
-            $id = rand(1, 1000);
-
-            $query = "INSERT INTO users VALUES($id, $name, $email, $pass);";
-        }
-
-        echo " Sign-Up successful ";
+    while($row = mysqli_fetch_array($result)) {
+        echo $row['id']; // Print a single column data
+        // echo print_r($row);       // Print the entire row data
     }
-    $email = '';
-    $pass = '';
-    $name = '';
+
+    // else{
+    //     $query = "INSERT INTO users(id, name, email, password) VALUES($id, '$name', '$email', '$pass');";
+
+
+    //     while(mysqli_query($conn, $query)==false){
+    //         $id = rand(1, 1000);
+
+    //         $query = "INSERT INTO users VALUES($id, $name, $email, $pass);";
+    //     }
+
+    //     echo " Sign-Up successful ";
+    // }
+    // $email = '';
+    // $pass = '';
+    // $name = '';
+
+	$_SESSION['id'] = $row['id'];
+
     close_connection($conn);
 ?>
 
-<p><strong>Already have an account?</strong></p><a href="sign_in.php">Sign-In</a>
+<p><strong>Don't have an account?</strong></p><a href="sign_up.php">Sign-Up</a>
 </div>
 
 </html>

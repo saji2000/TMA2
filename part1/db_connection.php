@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 
 // creating the db
 function create_db(){
