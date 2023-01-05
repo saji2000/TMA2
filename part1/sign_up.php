@@ -12,9 +12,9 @@
 
             <form action = "sign_up.php" method= "POST">
                 <!--form for inputs for login-->
-                    <input type ="text" name = "name" placeholder ="Enter Name"><br><br>
-                    <input type ="email" name = "email" placeholder ="Enter Email"><br><br>
-                    <input type ="text" name = "pass" placeholder ="Enter Password"><br><br>
+                    <input type ="text" name = "name" placeholder ="Enter Name" required><br><br>
+                    <input type ="email" name = "email" placeholder ="Enter Email" required><br><br>
+                    <input type ="text" name = "pass" placeholder ="Enter Password" required><br><br>
                     <button type ="submit">Sign-Up</button>
             </form>
 
@@ -30,7 +30,7 @@
 
     $id = rand(1, 1000);
 
-    echo gettype($pass);
+    echo " email  now: $email ";
 
     $query = "SELECT * FROM users WHERE email = '$email';";
 
@@ -38,12 +38,14 @@
 
     if(mysqli_num_rows($result) > 0){
 
+        echo '$result';
+
         echo " This email is already used! ";
 
     }
 
     else{
-        $query = "INSERT INTO users(id, name, email, password) VALUES($id, '$name', '$email', '$pass')";
+        $query = "INSERT INTO users(id, name, email, password) VALUES($id, '$name', '$email', '$pass');";
 
 
         while(mysqli_query($conn, $query)==false){
@@ -52,11 +54,14 @@
             $query = "INSERT INTO users VALUES($id, $name, $email, $pass);";
         }
 
-        echo " created the user succesfully ";
+        echo " Sign-Up successful ";
     }
-    
+    $email = '';
+    $pass = '';
+    $name = '';
     close_connection($conn);
 ?> 
+<p><strong>Already have an account?</strong></p><a href="sign_in.php">Sign-In</a>
 </div>
 
 </html>

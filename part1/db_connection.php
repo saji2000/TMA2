@@ -70,7 +70,6 @@ function setup_database(){
     }
 
     catch(Exception $e){
-        echo "Error creating tables!";
     }
 
     return $conn;
