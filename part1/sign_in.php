@@ -73,6 +73,8 @@
     // $name = '';
 
 	$_SESSION['id'] = $row['id'];
+    echo "here and id:" + $row['id'];
+    // header("Location:home.php");
 
     close_connection($conn);
 ?>

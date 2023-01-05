@@ -1,4 +1,5 @@
 <?php 
+
     include "db_connection.php";
 
     session_start();
@@ -6,6 +7,7 @@
     $conn = setup_database();
 
     close_connection($conn);
+    
 ?>
 
 <!DOCTYPE html>
@@ -23,10 +25,10 @@
         <nav>
           <ul>
             <li><a href="../tma.htm">Home</a></li>
-            <li><a href="../part1/resume.xml">Part 1</a></li>
-            <li><a href="part2.html">Part 2</a></li>
-            <li><a href="../part3/part3.html">Part 3</a></li>
-            <li><a href="../part4/part4.html">Part 4</a></li>
+            <li><a href="index.php">Part 1</a></li>
+            <li><a href="part2/part2.html">Part 2</a></li>
+            <li><a href="part3/part3.html">Part 3</a></li>
+            <li><a href="part4/part4.html">Part 4</a></li>
           </ul>
         </nav>
       </div>
