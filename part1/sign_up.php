@@ -16,7 +16,7 @@
                     <input type ="email" name = "email" placeholder ="Enter Email"><br><br>
                     <input type ="text" name = "pass" placeholder ="Enter Password"><br><br>
                     <button type ="submit">Sign-Up</button>
-                </form>
+            </form>
 
 <?php 
 
@@ -24,21 +24,36 @@
 
     $conn = setup_database();
 
-    close_connection($conn);
-
-
     $email = $_POST['email'];
     $pass = $_POST['pass'];
     $name = $_POST['name'];
 
-    echo "$email and $pass";
+    $id = rand(1, 1000);
 
-    $query = "SELECT * FROM users WHERE email = '$email' AND pass = '$pass';";
+    echo gettype($pass);
 
-    if(!($result=mysqli_query($conn,$database))){
-        die("<p> Could not execute query </p>");
+    $query = "SELECT * FROM users WHERE email = '$email';";
+
+    $result = mysqli_query($conn, $query);
+
+    if(mysqli_num_rows($result) > 0){
+
+        echo " This email is already used! ";
+
     }
-    echo "here";
+
+    else{
+        $query = "INSERT INTO users(id, name, email, password) VALUES($id, '$name', '$email', '$pass')";
+
+
+        while(mysqli_query($conn, $query)==false){
+            $id = rand(1, 1000);
+
+            $query = "INSERT INTO users VALUES($id, $name, $email, $pass);";
+        }
+
+        echo " created the user succesfully ";
+    }
     
     close_connection($conn);
 ?> 
