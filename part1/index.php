@@ -1,7 +1,8 @@
 <?php 
-    include "db_connection.php";
 
     session_start();
+
+    require_once('db_connection.php');
 
     $conn = setup_database();
 
@@ -41,12 +42,7 @@
 
         <div> 
             <h3>Sign-In: </h3>
-                <form action = "sign_in.php" method= "POST">
-                <!--form for inputs for login-->
-                    <input type ="email" name = "email" placeholder ="Enter Email"><br><br>
-                    <input type ="text" name = "pass" placeholder ="Enter Password"><br><br>
-                    <button type ="submit">Sign-In</button>
-                </form>
+                <a href="sign_in.php">Sign-In</a>
                 <p><strong>Don't have an account?</strong></p><a href="sign_up.php">Sign-Up</a>
         </div>
       </div>

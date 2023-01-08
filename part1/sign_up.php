@@ -1,4 +1,9 @@
+<?php
+    session_start();
 
+    require_once('db_connection.php');
+
+?>
 <html>
 	<head>
 		<title>Sign-In/Sign-Up</title>
@@ -26,48 +31,51 @@
                     <input type ="text" name = "name" placeholder ="Enter Name" required><br><br>
                     <input type ="email" name = "email" placeholder ="Enter Email" required><br><br>
                     <input type ="text" name = "pass" placeholder ="Enter Password" required><br><br>
-                    <button type ="submit">Sign-Up</button>
+                    <button type ="submit" name="submit">Sign-Up</button>
             </form>
 
 <?php 
 
-    include "db_connection.php";
 
-    session_start();
 
     $conn = setup_database();
 
-    $email = $_POST['email'];
-    $pass = $_POST['pass'];
-    $name = $_POST['name'];
+    if(isset($_POST['submit'])){
+        $email = $_POST['email'];
+        $pass = $_POST['pass'];
+        $name = $_POST['name'];
 
-    $id = rand(1, 1000);
+        $id = rand(1, 10000);
 
-    $query = "SELECT * FROM users WHERE email = '$email';";
+        $query = "SELECT * FROM users WHERE email = '$email';";
 
-    $result = mysqli_query($conn, $query);
+        $result = mysqli_query($conn, $query);
 
-    if(mysqli_num_rows($result) > 0){
+        // checking if the email already exists
+        if(mysqli_num_rows($result) > 0){
 
-        echo " This email is already used! ";
+            echo " This email is already used! \n";
 
-    }
-
-    else{
-        $query = "INSERT INTO users(id, name, email, password) VALUES($id, '$name', '$email', '$pass');";
-
-
-        while(mysqli_query($conn, $query)==false){
-            $id = rand(1, 1000);
-
-            $query = "INSERT INTO users VALUES($id, $name, $email, $pass);";
         }
 
-        echo " Sign-Up successful ";
+        // create the account
+        else{
+            $query = "INSERT INTO users(id, name, email, password) VALUES($id, '$name', '$email', '$pass');";
+
+            // if id has already been used
+            while(mysqli_query($conn, $query)==false){
+                $id = rand(1, 10000);
+
+                $query = "INSERT INTO users VALUES($id, $name, $email, $pass);";
+            }
+
+            // taking the user to the home page
+            $_SESSION['id'] = $row['id'];
+            header("Location:home.php");
+            exit();
+        }
     }
-    $email = '';
-    $pass = '';
-    $name = '';
+    
     close_connection($conn);
 ?>
 

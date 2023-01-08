@@ -1,13 +1,8 @@
-<?php 
-
-    include "db_connection.php";
-
+<?php
     session_start();
 
-    $conn = setup_database();
+    require_once('db_connection.php');
 
-    close_connection($conn);
-    
 ?>
 
 <!DOCTYPE html>
@@ -36,20 +31,46 @@
       <div class="description">
         <h3 class="title">Most Popular Bookmarks</h3>
         <div class="popular_bookmarks">
-            <a href="http://facebook.com">facebook</a>
-            <a href="http://facebook.com">facebook</a>
-            <a href="http://facebook.com">facebook</a>
+
+        <?php 
+
+
+            $conn = setup_database();
+
+            // phpinfo();
+
+            $id = $_SESSION['id'];
+
+            // print_r($_SESSION);
+
+            $query = "SELECT website FROM bookmarks WHERE user_id = $id;";
+
+            $result = mysqli_query($conn, $query);
+
+            if(mysqli_num_rows($result) == 0){
+
+                echo " No bookmarks yet ";
+    
+            }
+            else{
+                while($row = mysqli_fetch_array($result)) {
+                    echo $row['website']; // Print a single column data
+                    // echo print_r($row);      
+                }
+            }
+
+            close_connection($conn);
+
+        ?>
         </div>
 
         <div> 
-            <h3>Sign-In: </h3>
-                <form action = "sign_in.php" method= "POST">
+            <h3>Add a new bookmark: </h3>
+                <form action = "add_bookmark.php" method= "POST">
                 <!--form for inputs for login-->
-                    <input type ="email" name = "email" placeholder ="Enter Email"><br><br>
-                    <input type ="text" name = "pass" placeholder ="Enter Password"><br><br>
-                    <button type ="submit">Sign-In</button>
+                    <input type ="text" name = "website" placeholder ="Enter Website" id="url"><br><br>
+                    <button type ="submit" id="submit">Enter</button>
                 </form>
-                <p><strong>Don't have an account?</strong></p><a href="sign_up.php">Sign-Up</a>
         </div>
       </div>
 

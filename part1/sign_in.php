@@ -1,4 +1,8 @@
+<?php
+    session_start();
+    require_once('db_connection.php');
 
+?>
 <html>
 	<head>
 		<title>Sign-In/Sign-Up</title>
@@ -22,39 +26,43 @@
             <h3><a href="../tma.htm">Bookmarking App</a></h3>
 
             <form action = "sign_in.php" method= "POST">
-                    <!--form for inputs for login-->
-                    <input type ="email" name = "email" placeholder ="Enter Email" required><br><br>
-                    <input type ="text" name = "pass" placeholder ="Enter Password" required><br><br>
-                    <button type ="submit">Sign-In</button>
+                <!--form for inputs for login-->
+                <input type ="email" name = "email" placeholder ="Enter Email" required><br><br>
+                <input type ="text" name = "pass" placeholder ="Enter Password" required><br><br>
+                <button type ="submit" name="submit">Sign-In</button>
             </form>
 
 <?php 
 
-    include "db_connection.php";
-
-    session_start();
 
     $conn = setup_database();
 
-    $email = $_POST['email'];
-    $pass = $_POST['pass'];
+    if(isset($_POST['submit'])){
+        $email = $_POST['email'];
+        $pass = $_POST['pass'];
 
-    // $id = rand(1, 1000);
+        $query = "SELECT * FROM users WHERE email = '$email' AND password = '$pass';";
 
-    $query = "SELECT * FROM users WHERE email = '$email' AND password = '$pass';";
+        $result = mysqli_query($conn, $query);
 
-    $result = mysqli_query($conn, $query);
+        if(mysqli_num_rows($result) == 0){
 
-    if(mysqli_num_rows($result) == 0){
+            echo " Wrong passowrd or email ";
 
-        echo " Wrong passowrd or email ";
+        }
+        else{
+            while($row = mysqli_fetch_array($result)) {
+                echo $row['id']; // Print a single column data
+                $_SESSION['id'] = $row['id'];
+            }
 
+            header("Location:home.php");
+            exit();
+        }
     }
+    
 
-    while($row = mysqli_fetch_array($result)) {
-        echo $row['id']; // Print a single column data
-        // echo print_r($row);       // Print the entire row data
-    }
+    
 
     // else{
     //     $query = "INSERT INTO users(id, name, email, password) VALUES($id, '$name', '$email', '$pass');";
@@ -72,9 +80,7 @@
     // $pass = '';
     // $name = '';
 
-	$_SESSION['id'] = $row['id'];
-    echo "here and id:" + $row['id'];
-    // header("Location:home.php");
+
 
     close_connection($conn);
 ?>
