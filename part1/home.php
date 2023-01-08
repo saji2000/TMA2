@@ -30,7 +30,7 @@
 
       <div class="description">
         <h3 class="title">Most Popular Bookmarks</h3>
-        <div class="popular_bookmarks">
+        <div class="bookmarks" id="bookmarks">
 
         <?php 
 
@@ -63,10 +63,13 @@
 
         ?>
         </div>
+        <div id="results"></div>
 
         <div> 
             <h3>Add a new bookmark: </h3>
-                <form action = "add_bookmark.php" method= "POST">
+                <!-- <form action = "add_bookmark.php" method= "POST"> -->
+                <form>
+
                 <!--form for inputs for login-->
                     <input type ="text" name = "website" placeholder ="Enter Website" id="url"><br><br>
                     <button type ="submit" id="submit">Enter</button>
@@ -76,5 +79,6 @@
 
 
     </div>
+    <script src="url_valid.js"></script>
   </body>
 </html>
