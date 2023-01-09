@@ -1,25 +1,41 @@
 
 function start(){
-    document.getElementById('submit').addEventListener("click", checkUrl, false);
+    document.getElementById('button').addEventListener("click", checkUrl, false);
 }
 
-const isValidUrl = urlString=> {
+function isValidUrl(string) {
     let url;
-    try { 
-          url =new URL(urlString); 
-    }
-    catch(e){ 
-      return false; 
+    try {
+      url = new URL(string);
+    } catch (_) {
+      return false;
     }
     return url.protocol === "http:" || url.protocol === "https:";
 }
 
+function isURL(str) {
+    var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|'+ // domain name
+    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+    return pattern.test(str);
+  }
+
 function checkUrl(){
-    console.log("here dawg");
-    var url = document.getElementById('url').innerHTML;
+
+    
+    var url = document.getElementById('url').value;
+    console.log(url);
+    console.log(isValidUrl(url));
+
     if(isValidUrl(url)){
         console.log('Url is correct');
         document.getElementById('results').innerHTML = url;
+    }
+    else{
+        console.log('Url is incorrect');
     }
 }
 

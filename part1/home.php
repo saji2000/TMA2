@@ -73,6 +73,7 @@
                 <!--form for inputs for login-->
                     <input type ="text" name = "website" placeholder ="Enter Website" id="url"><br><br>
                     <button type ="submit" id="submit">Enter</button>
+                    <input type="button" id="button" value = "Enter js"/>
                 </form>
         </div>
       </div>
