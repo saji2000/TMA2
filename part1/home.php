@@ -37,15 +37,18 @@
 
             $conn = setup_database();
 
-            // phpinfo();
-
             $id = $_SESSION['id'];
-
-            // print_r($_SESSION);
-
+            echo "here is the id: $id ";
             $query = "SELECT website FROM bookmarks WHERE user_id = $id;";
 
-            $result = mysqli_query($conn, $query);
+            try{
+                $result = mysqli_query($conn, $query);
+            }
+            catch(Exception $e) {
+                echo "error: $e";
+            }
+
+            echo "here";
 
             if(mysqli_num_rows($result) == 0){
 
@@ -69,19 +72,34 @@
             <h3>Add a new bookmark: </h3>
                 <form method= "POST" name="add_bookmark">
                 <form>
-
-                <!--form for inputs for login-->
                     <input type ="text" name = "website" placeholder ="Enter Website" id="url"><br><br>
-                    <button type ="submit" id="submit" name="button_submit">Enter</button>
-                    <!-- <input type="button" id="button" value = "Enter js"/> -->
+                    <button type ="submit" id="submit" name="button_submit" disabled>Add</button>
+                    <input type="button" id="button" value = "validate"/>
                 </form>
 
                 <?php
                     if (isset($_POST['button_submit'])){
-                        echo "ok";
-                    }
-                    else{
-                        echo "not set";
+                        $conn = setup_database();
+
+                        $id = $_SESSION['id'];
+
+                        $website = $_POST['website'];
+
+                        $query = "INSERT INTO bookmarks VALUES('$website', $id)";
+
+                        $result = mysqli_query($conn, $query);
+
+                        if(mysqli_query($conn, $query)){
+
+                            echo "Record added successfully";
+                
+                        }
+                        else{
+                            echo "Error";
+                        }
+
+                        close_connection($conn);
+
                     }
                 ?>
         </div>

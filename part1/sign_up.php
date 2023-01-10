@@ -66,7 +66,7 @@
             while(mysqli_query($conn, $query)==false){
                 $id = rand(1, 10000);
 
-                $query = "INSERT INTO users VALUES($id, $name, $email, $pass);";
+                $query = "INSERT INTO users VALUES($id, '$name', '$email', '$pass');";
             }
 
             // taking the user to the home page

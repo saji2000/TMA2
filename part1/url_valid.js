@@ -1,7 +1,7 @@
 
 function start(){
-    document.getElementById('submit').addEventListener("click", checkUrl, false);
-    // document.getElementById('button').addEventListener("click", checkUrl, false);
+    document.getElementById('button').addEventListener("click", checkUrl, false);
+    // document.getElementById('button').addEventListener("click", disable, false);
 
 }
 
@@ -50,6 +50,10 @@ function existsFile(url) {
     return http.status!=404;
  }
 
+function disable(){
+    document.getElementById("sumbit").disable = true;
+}
+
 function checkUrl(){
 
     
@@ -58,8 +62,8 @@ function checkUrl(){
     console.log(isValidUrl(url));
 
     if(isValidUrl(url)){
-        console.log('Url is correct--------------------------');
         document.getElementById('results').innerHTML = url;
+        document.getElementById('submit').disabled = false;
     }
     else{
         console.log('Url is incorrect');

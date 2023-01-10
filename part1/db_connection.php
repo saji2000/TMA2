@@ -44,7 +44,7 @@ function create_tables($conn){
 
         "CREATE TABLE users(id int , name varchar(255) NOT NULL, email varchar(255) NOT NULL UNIQUE, password varchar(255), PRIMARY KEY (id));
 
-        CREATE TABLE bookmarks(website varchar(255) NOT NULL, user_id int, FOREIGN KEY (user_id) REFERENCES users(id));";
+        CREATE TABLE bookmarks(website varchar(255) NOT NULL, user_id int NOT NULL, FOREIGN KEY (user_id) REFERENCES users(id), CONSTRAINT one_website UNIQUE (website, user_id));";
     
     if (mysqli_multi_query($conn, $tables) === TRUE) {
         echo "Tables created successfully";
