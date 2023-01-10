@@ -67,14 +67,23 @@
 
         <div> 
             <h3>Add a new bookmark: </h3>
-                <!-- <form action = "add_bookmark.php" method= "POST"> -->
+                <form method= "POST" name="add_bookmark">
                 <form>
 
                 <!--form for inputs for login-->
                     <input type ="text" name = "website" placeholder ="Enter Website" id="url"><br><br>
-                    <button type ="submit" id="submit">Enter</button>
-                    <input type="button" id="button" value = "Enter js"/>
+                    <button type ="submit" id="submit" name="button_submit">Enter</button>
+                    <!-- <input type="button" id="button" value = "Enter js"/> -->
                 </form>
+
+                <?php
+                    if (isset($_POST['button_submit'])){
+                        echo "ok";
+                    }
+                    else{
+                        echo "not set";
+                    }
+                ?>
         </div>
       </div>
 

@@ -1,27 +1,54 @@
 
 function start(){
-    document.getElementById('button').addEventListener("click", checkUrl, false);
+    document.getElementById('submit').addEventListener("click", checkUrl, false);
+    // document.getElementById('button').addEventListener("click", checkUrl, false);
+
 }
+
 
 function isValidUrl(string) {
-    let url;
-    try {
-      url = new URL(string);
-    } catch (_) {
-      return false;
-    }
-    return url.protocol === "http:" || url.protocol === "https:";
-}
+    var res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+    return (res !== null)
+};
+
 
 function isURL(str) {
-    var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|'+ // domain name
-    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
-    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
-    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
-    return pattern.test(str);
-  }
+
+    // if(window.XMLHttpRequest)
+    
+    // request = new XMLHttpRequest();
+    // else
+    //     request = new ActiveXObject("Microsoft.XMLHTTP");
+    // request.open('GET', str, false);
+    // request.send(); // there will be a 'pause' here until the response to come.
+    // // the object request will be actually modified
+    // if (request.status === 404) {
+    //     return false;
+    // }
+
+    var request = new XMLHttpRequest();  
+    request.open('GET', str, true);
+    request.onreadystatechange = function(){
+        if (request.status === 404) {  
+            return false;
+        }  
+        
+    };
+    try{
+
+    }
+    catch(e){}
+
+    return true;
+    
+}
+
+function existsFile(url) {
+    var http = new XMLHttpRequest();
+    http.open('HEAD', url, false);
+    http.send();
+    return http.status!=404;
+ }
 
 function checkUrl(){
 
@@ -31,7 +58,7 @@ function checkUrl(){
     console.log(isValidUrl(url));
 
     if(isValidUrl(url)){
-        console.log('Url is correct');
+        console.log('Url is correct--------------------------');
         document.getElementById('results').innerHTML = url;
     }
     else{
@@ -42,13 +69,3 @@ function checkUrl(){
 
 window.addEventListener("load", start, false);
 
-// if(window.XMLHttpRequest)
-//     request = new XMLHttpRequest();
-// else
-//     request = new ActiveXObject("Microsoft.XMLHTTP");
-// request.open('GET', 'http://www.mozilla.org', false);
-// request.send(); // there will be a 'pause' here until the response to come.
-// // the object request will be actually modified
-// if (request.status === 404) {
-//     alert("The page you are trying to reach is not available.");
-// }
