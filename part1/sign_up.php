@@ -70,7 +70,7 @@
             }
 
             // taking the user to the home page
-            $_SESSION['id'] = $row['id'];
+            $_SESSION['id'] = $id;
             header("Location:home.php");
             exit();
         }

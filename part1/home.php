@@ -38,7 +38,6 @@
             $conn = setup_database();
 
             $id = $_SESSION['id'];
-            echo "here is the id: $id ";
             $query = "SELECT website FROM bookmarks WHERE user_id = $id;";
 
             try{
@@ -48,8 +47,6 @@
                 echo "error: $e";
             }
 
-            echo "here";
-
             if(mysqli_num_rows($result) == 0){
 
                 echo " No bookmarks yet ";
@@ -57,8 +54,13 @@
             }
             else{
                 while($row = mysqli_fetch_array($result)) {
-                    echo $row['website']; // Print a single column data
-                    // echo print_r($row);      
+                    $website = $row['website'];
+                    $website_link = ltrim($website,'https://');
+                    $website_link = ltrim($website,'http://');
+                    $website_link = str_replace('/', '', $website_link);
+                    $website_link = str_replace(':', '', $website_link);
+
+                    print("<a href = '$website' target='_blank'>$website_link</a>"); // Print a single column data   
                 }
             }
 
@@ -89,13 +91,15 @@
 
                         $result = mysqli_query($conn, $query);
 
-                        if(mysqli_query($conn, $query)){
+                        echo "right here";
 
+                        try{
+                            mysqli_query($conn, $query);
                             echo "Record added successfully";
-                
                         }
-                        else{
-                            echo "Error";
+                        catch (Exception $e) {
+                            echo "Error: " . $e->getMessage();
+                            echo '<script>alert("Website already exist")</script>';
                         }
 
                         close_connection($conn);
