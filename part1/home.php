@@ -31,6 +31,37 @@
       <div class="description">
         <h3 class="title">Most Popular Bookmarks</h3>
         <div class="bookmarks" id="bookmarks">
+        <h3>Add a new bookmark: </h3>
+                <form method= "POST" name="add_bookmark">
+                <form>
+                    <input type ="text" name = "website" placeholder ="Enter Website" id="url"><br><br>
+                    <button type ="submit" id="submit" name="button_submit" disabled>Add</button>
+                    <input type="button" id="button_add" value = "validate"/>
+                </form>
+
+                <?php
+                    if (isset($_POST['button_submit'])){
+                        $conn = setup_database();
+
+                        $id = $_SESSION['id'];
+
+                        $website = $_POST['website'];
+
+                        $query = "INSERT INTO bookmarks VALUES('$website', $id)";
+
+                        try{
+                            mysqli_query($conn, $query);
+                            // echo '<script>alert("Website added")</script>';
+                        }
+                        catch (Exception $e) {
+                            echo '<script>alert("Website already exist")</script>';
+                        }
+
+                        close_connection($conn);
+
+                    }
+                ?>
+        </div>
 
         <?php 
 
@@ -63,6 +94,7 @@
                     print("<a href = '$website' target='_blank'>$website_link</a>"); // Print a single column data   
                 }
             }
+            // }
 
             close_connection($conn);
 
@@ -71,23 +103,22 @@
         <div id="results"></div>
 
         <div> 
-            <h3>Add a new bookmark: </h3>
+            <h3>Delete a bookmark: </h3>
                 <form method= "POST" name="add_bookmark">
                 <form>
                     <input type ="text" name = "website" placeholder ="Enter Website" id="url"><br><br>
-                    <button type ="submit" id="submit" name="button_submit" disabled>Add</button>
-                    <input type="button" id="button" value = "validate"/>
+                    <button type ="submit" id="submit" name="button_delete">Delete</button>
                 </form>
 
                 <?php
-                    if (isset($_POST['button_submit'])){
+                    if (isset($_POST['button_delete'])){
                         $conn = setup_database();
 
                         $id = $_SESSION['id'];
 
                         $website = $_POST['website'];
 
-                        $query = "INSERT INTO bookmarks VALUES('$website', $id)";
+                        $query = "DELETE FROM bookmarks WHERE user_id = $id AND website = '$website';";
 
                         $result = mysqli_query($conn, $query);
 
@@ -95,17 +126,30 @@
 
                         try{
                             mysqli_query($conn, $query);
-                            echo "Record added successfully";
+                            echo "Record Deleted successfully";
                         }
                         catch (Exception $e) {
                             echo "Error: " . $e->getMessage();
-                            echo '<script>alert("Website already exist")</script>';
+                            echo '<script>alert("Website does not exist")</script>';
                         }
 
                         close_connection($conn);
 
                     }
                 ?>
+        </div>
+        <div> 
+            <h3>Edit a bookmark: </h3>
+                <form method= "POST" name="edit_bookmark">
+                <form>
+                    <input type ="text" name = "old_website" placeholder ="Enter the Old Website" id="old_url"><br><br>
+                    <input type ="text" name = "new_website" placeholder ="Enter the New Website" id="new_url"><br><br>
+                    <button type ="submit" id="submit" name="button_delete">Delete</button>
+                    <input type="button" id="button_edit" value = "validate"/>
+
+                </form>
+
+     
         </div>
       </div>
 

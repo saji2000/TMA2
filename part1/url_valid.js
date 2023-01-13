@@ -1,6 +1,8 @@
 
 function start(){
-    document.getElementById('button').addEventListener("click", checkUrl, false);
+    document.getElementById('button_add').addEventListener("click", checkUrl, false);
+    // document.getElementById('button_edit').addEventListener("click", checkUrl('new_url'), false);
+
     // document.getElementById('button').addEventListener("click", disable, false);
 
 }
@@ -56,6 +58,7 @@ function disable(){
 
 function checkUrl(){
 
+    console.log("here");
     
     var url = document.getElementById('url').value;
     console.log(url);
