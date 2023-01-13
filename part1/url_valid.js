@@ -1,11 +1,11 @@
 
-function start(){
-    document.getElementById('button_add').addEventListener("click", checkUrl, false);
-    // document.getElementById('button_edit').addEventListener("click", checkUrl('new_url'), false);
+// function start(){
+//     document.getElementById('button_add').addEventListener("click", checkUrl, false);
+//     document.getElementById('button_edit').addEventListener("click", checkUrl('new_url'), false);
 
-    // document.getElementById('button').addEventListener("click", disable, false);
+//     // document.getElementById('button').addEventListener("click", disable, false);
 
-}
+// }
 
 
 function isValidUrl(string) {
@@ -56,16 +56,14 @@ function disable(){
     document.getElementById("sumbit").disable = true;
 }
 
-function checkUrl(){
-
-    console.log("here");
+function checkUrl(address){
     
-    var url = document.getElementById('url').value;
+    var url = document.getElementById(address).value;
     console.log(url);
     console.log(isValidUrl(url));
 
     if(isValidUrl(url)){
-        document.getElementById('results').innerHTML = url;
+        // document.getElementById('results').innerHTML = url;
         document.getElementById('submit').disabled = false;
     }
     else{
@@ -74,5 +72,5 @@ function checkUrl(){
 }
 
 
-window.addEventListener("load", start, false);
+// window.addEventListener("load", start, false);
 
