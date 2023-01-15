@@ -35,8 +35,8 @@
                 <form method= "POST" name="add_bookmark">
                 <form>
                     <input type ="text" name = "website" placeholder ="Enter Website" id="url"><br><br>
-                    <button type ="submit" id="submit" name="button_submit" disabled>Add</button>
-                    <input type="button" id="button_add" value = "validate" onclick="checkUrl('url')"/>
+                    <button type ="submit" id="button_add" name="button_submit" disabled>Add</button>
+                    <input type="button" value = "validate" onclick="checkUrl('url', 'button_add')"/>
                 </form>
 
                 <?php
@@ -87,7 +87,7 @@
                 while($row = mysqli_fetch_array($result)) {
                     $website = $row['website'];
                     $website_link = ltrim($website,'https://');
-                    $website_link = ltrim($website,'http://');
+                    $website_link = ltrim($website_link,'http://');
                     $website_link = str_replace('/', '', $website_link);
                     $website_link = str_replace(':', '', $website_link);
 
@@ -100,7 +100,7 @@
 
         ?>
         </div>
-        <div id="results"></div>
+        <!-- <div id="results"></div> -->
 
         <div> 
             <h3>Delete a bookmark: </h3>
@@ -116,12 +116,14 @@
 
                         $id = $_SESSION['id'];
 
-                        $website_delete = $_POST['website'];
+                        $website_delete = $_POST['website_delete'];
 
                         $query = "DELETE FROM bookmarks WHERE user_id = $id AND website = '$website_delete';";
 
                         $check = "SELECT * FROM bookmarks WHERE user_id = $id AND website = '$website_delete';";
 
+
+                        
                         $result = mysqli_query($conn, $check);
 
                         $num_rows = mysqli_num_rows($result);
@@ -129,19 +131,10 @@
 
                         if($num_rows > 0){
                             mysqli_query($conn, $query);
-                            echo "Record Deleted successfully bro";
                         }
                         else{
                             echo '<script>alert("Website does not exist")</script>';
                         }
-                        // try{
-                        //     mysqli_query($conn, $query);
-                        //     echo "Record Deleted successfully";
-                        // }
-                        // catch (Exception $e) {
-                        //     echo "Error: " . $e->getMessage();
-                        //     echo '<script>alert("Website does not exist")</script>';
-                        // }
 
                         close_connection($conn);
 
@@ -154,8 +147,8 @@
                 <form>
                     <input type ="text" name = "old_website" placeholder ="Enter the Old Website" id="old_url"><br><br>
                     <input type ="text" name = "new_website" placeholder ="Enter the New Website" id="new_url"><br><br>
-                    <button type ="submit" id="submit" name="button_delete" disabled>Delete</button>
-                    <input type="button" id="button_edit" value = "validate" onclick="checkUrl('new_url')"/>
+                    <button type ="submit" id="button_edit" name="button_delete" disabled>Delete</button>
+                    <input type="button" value = "validate" onclick="checkUrl('new_url', 'button_edit')"/>
 
                 </form>
 

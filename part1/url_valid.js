@@ -52,11 +52,13 @@ function existsFile(url) {
     return http.status!=404;
  }
 
-function disable(){
-    document.getElementById("sumbit").disable = true;
+function enable(id){
+    console.log(id);
+
+    document.getElementById(id).disabled = false;
 }
 
-function checkUrl(address){
+function checkUrl(address, id){
     
     var url = document.getElementById(address).value;
     console.log(url);
@@ -64,10 +66,11 @@ function checkUrl(address){
 
     if(isValidUrl(url)){
         // document.getElementById('results').innerHTML = url;
-        document.getElementById('submit').disabled = false;
+        // document.getElementById('submit').disabled = false;
+        enable(id);
     }
     else{
-        console.log('Url is incorrect');
+        alert('Url is incorrect');
     }
 }
 
