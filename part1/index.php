@@ -35,9 +35,41 @@
       <div class="description">
         <h3 class="title">Most Popular Bookmarks</h3>
         <div class="popular_bookmarks">
-            <a href="http://facebook.com">facebook</a>
-            <a href="http://facebook.com">facebook</a>
-            <a href="http://facebook.com">facebook</a>
+        <?php 
+
+          $conn = setup_database();
+
+          $id = $_SESSION['id'];
+          $query = "SELECT website, COUNT(website) AS count FROM bookmarks GROUP BY website ORDER BY count DESC LIMIT 10;";
+
+          try{
+              $result = mysqli_query($conn, $query);
+          }
+          catch(Exception $e) {
+              echo "error: $e";
+          }
+
+          if(mysqli_num_rows($result) == 0){
+
+              echo " No bookmarks yet ";
+
+          }
+          else{
+              while($row = mysqli_fetch_array($result)) {
+                  $website = $row['website'];
+                  $website_link = ltrim($website,'https://');
+                  $website_link = ltrim($website_link,'http://');
+                  $website_link = str_replace('/', '', $website_link);
+                  $website_link = str_replace(':', '', $website_link);
+
+                  print("<a href = '$website' target='_blank'>$website_link</a> &nbsp;"); // Print a single column data   
+              }
+          }
+          // }
+
+          close_connection($conn);
+
+        ?>
         </div>
 
         <div> 

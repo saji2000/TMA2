@@ -1,11 +1,5 @@
 
-// function start(){
-//     document.getElementById('button_add').addEventListener("click", checkUrl, false);
-//     document.getElementById('button_edit').addEventListener("click", checkUrl('new_url'), false);
 
-//     // document.getElementById('button').addEventListener("click", disable, false);
-
-// }
 
 
 function isValidUrl(string) {
@@ -16,39 +10,34 @@ function isValidUrl(string) {
 
 function isURL(str) {
 
-    // if(window.XMLHttpRequest)
-    
-    // request = new XMLHttpRequest();
-    // else
-    //     request = new ActiveXObject("Microsoft.XMLHTTP");
-    // request.open('GET', str, false);
-    // request.send(); // there will be a 'pause' here until the response to come.
-    // // the object request will be actually modified
-    // if (request.status === 404) {
-    //     return false;
-    // }
-
-    var request = new XMLHttpRequest();  
-    request.open('GET', str, true);
-    request.onreadystatechange = function(){
-        if (request.status === 404) {  
-            return false;
-        }  
-        
-    };
+    var request;
+    if(window.XMLHttpRequest)
+        request = new XMLHttpRequest();
+    else
+        request = new ActiveXObject("Microsoft.XMLHTTP");
+    request.open('GET', str, false);
     try{
-
+        request.send(); // there will be a 'pause' here until the response to come.
     }
-    catch(e){}
-
-    return true;
+    catch(error){
+        console.log(request);
+    }
+    // the object request will be actually modified
+    if (request.status === 404) {
+        alert("The page you are trying to reach is not available.");
+    }
     
 }
 
 function existsFile(url) {
     var http = new XMLHttpRequest();
     http.open('HEAD', url, false);
-    http.send();
+    try{
+        http.send();
+    }
+    catch(error){
+        console.log(error);
+    }
     return http.status!=404;
  }
 
@@ -62,18 +51,14 @@ function checkUrl(address, id){
     
     var url = document.getElementById(address).value;
     console.log(url);
-    console.log(isValidUrl(url));
+    console.log("Old method:" + isValidUrl(url));
+    // console.log("New method:" + existsFile(url));
 
     if(isValidUrl(url)){
-        // document.getElementById('results').innerHTML = url;
-        // document.getElementById('submit').disabled = false;
         enable(id);
     }
     else{
         alert('Url is incorrect');
     }
 }
-
-
-// window.addEventListener("load", start, false);
 

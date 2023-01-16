@@ -51,7 +51,6 @@
 
                         try{
                             mysqli_query($conn, $query);
-                            // echo '<script>alert("Website added")</script>';
                         }
                         catch (Exception $e) {
                             echo '<script>alert("Website already exist")</script>';
@@ -100,7 +99,6 @@
 
         ?>
         </div>
-        <!-- <div id="results"></div> -->
 
         <div> 
             <h3>Delete a bookmark: </h3>
@@ -133,7 +131,7 @@
                             mysqli_query($conn, $query);
                         }
                         else{
-                            echo '<script>alert("Website does not exist")</script>';
+                            echo '<script>alert("Website does not exist to be deleted")</script>';
                         }
 
                         close_connection($conn);
@@ -147,12 +145,39 @@
                 <form>
                     <input type ="text" name = "old_website" placeholder ="Enter the Old Website" id="old_url"><br><br>
                     <input type ="text" name = "new_website" placeholder ="Enter the New Website" id="new_url"><br><br>
-                    <button type ="submit" id="button_edit" name="button_delete" disabled>Delete</button>
+                    <button type ="submit" id="button_edit" name="button_edit" disabled>Edit</button>
                     <input type="button" value = "validate" onclick="checkUrl('new_url', 'button_edit')"/>
-
                 </form>
 
-     
+                <?php
+                    if (isset($_POST['button_edit'])){
+                        $conn = setup_database();
+
+                        $id = $_SESSION['id'];
+
+                        $old_website = $_POST['old_website'];
+
+                        $new_website = $_POST['new_website'];
+
+                        $query = "UPDATE bookmarks SET website = '$new_website' WHERE user_id = $id AND website ='$old_website';";
+
+                        $check = "SELECT * FROM bookmarks WHERE user_id = $id AND website = '$old_website';";
+
+                        $result = mysqli_query($conn, $check);
+
+                        $num_rows = mysqli_num_rows($result);
+
+                        if($num_rows > 0){
+                            mysqli_query($conn, $query);
+                        }
+                        else{
+                            echo '<script>alert("Website does not exist to be edited")</script>';
+                        }
+
+                        close_connection($conn);
+
+                    }
+                ?>
         </div>
       </div>
 
