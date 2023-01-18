@@ -58,6 +58,7 @@ function close_connection($conn){
     $conn -> close();
 }
 
+// setting up the database
 function setup_database(){
     try{
         $conn = create_db();
