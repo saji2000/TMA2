@@ -17,7 +17,7 @@ function create_db(){
     } 
 
     // Create database
-    $sql = "CREATE DATABASE part1;";
+    $sql = "CREATE DATABASE part2;";
 
     mysqli_query($conn, $sql);
 

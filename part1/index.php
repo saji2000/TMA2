@@ -24,8 +24,8 @@
         <nav>
           <ul>
             <li><a href="../tma.htm">Home</a></li>
-            <li><a href="../part1/resume.xml">Part 1</a></li>
-            <li><a href="part2.html">Part 2</a></li>
+            <li><a href="../part1/index.php">Part 1</a></li>
+            <li><a href="../part2/index.php">Part 2</a></li>
             <li><a href="../part3/part3.html">Part 3</a></li>
             <li><a href="../part4/part4.html">Part 4</a></li>
           </ul>
