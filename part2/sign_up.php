@@ -17,22 +17,20 @@
             <nav>
                 <ul>
                     <li><a href="../tma.htm">Home</a></li>
-                    <li><a href="index.php">Part 1</a></li>
-                    <li><a href="part2/part2.html">Part 2</a></li>
-                    <li><a href="part3/part3.html">Part 3</a></li>
-                    <li><a href="part4/part4.html">Part 4</a></li>
+                    <li><a href="../part1/index.php">Part 1</a></li>
+                    <li><a href="../part2/index.php">Part 2</a></li>
                 </ul>
             </nav>
-			<div>	
-            <h3><a href="../tma.htm">Bookmarking App</a></h3>
+		<div>	
+        <h3><a href="../tma.htm">Bookmarking App</a></h3>
 
-            <form action = "sign_up.php" method= "POST">
-                    <!--form for inputs for login-->
-                    <input type ="text" name = "name" placeholder ="Enter Name" required><br><br>
-                    <input type ="email" name = "email" placeholder ="Enter Email" required><br><br>
-                    <input type ="text" name = "pass" placeholder ="Enter Password" required><br><br>
-                    <button type ="submit" name="submit">Sign-Up</button>
-            </form>
+        <form action = "sign_up.php" method= "POST">
+                <!--form for inputs for login-->
+                <input type ="text" name = "name" placeholder ="Enter Name" required><br><br>
+                <input type ="email" name = "email" placeholder ="Enter Email" required><br><br>
+                <input type ="text" name = "pass" placeholder ="Enter Password" required><br><br>
+                <button type ="submit" name="submit">Sign-Up</button>
+        </form>
 
 <?php 
 
@@ -54,13 +52,13 @@
         // checking if the email already exists
         if(mysqli_num_rows($result) > 0){
 
-            echo " This email is already used! \n";
+            echo '<script>alert("user already exist")</script>';
 
         }
 
         // create the account
         else{
-            $query = "INSERT INTO users(id, name, email, password) VALUES($id, '$name', '$email', '$pass');";
+            $query = "INSERT INTO users(id, name, email, password, tutor) VALUES($id, '$name', '$email', '$pass', 0);";
 
             // if id has already been used
             while(mysqli_query($conn, $query)==false){
@@ -71,8 +69,8 @@
 
             // taking the user to the home page
             $_SESSION['id'] = $id;
-            header("Location:home.php");
-            exit();
+            // header("Location:home.php");
+            // exit();
         }
     }
     

@@ -15,14 +15,12 @@
         <div class = "body">
             <h1>Menu</h1>
             <nav>
-                <ul>
-                    <li><a href="../tma.htm">Home</a></li>
-                    <li><a href="index.php">Part 1</a></li>
-                    <li><a href="part2/part2.html">Part 2</a></li>
-                    <li><a href="part3/part3.html">Part 3</a></li>
-                    <li><a href="part4/part4.html">Part 4</a></li>
-                </ul>
-            </nav>
+          <ul>
+            <li><a href="../tma.htm">Home</a></li>
+            <li><a href="../part1/index.php">Part 1</a></li>
+            <li><a href="../part2/index.php">Part 2</a></li>
+          </ul>
+        </nav>
 			<div>	
             <h3><a href="../tma.htm">Bookmarking App</a></h3>
 
@@ -54,7 +52,7 @@
         // checking if the email already exists
         if(mysqli_num_rows($result) > 0){
 
-            echo " This email is already used! \n";
+            echo '<script>alert("user already exist")</script>';
 
         }
 

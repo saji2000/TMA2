@@ -16,10 +16,8 @@
             <nav>
                 <ul>
                     <li><a href="../tma.htm">Home</a></li>
-                    <li><a href="index.php">Part 1</a></li>
-                    <li><a href="part2/part2.html">Part 2</a></li>
-                    <li><a href="part3/part3.html">Part 3</a></li>
-                    <li><a href="part4/part4.html">Part 4</a></li>
+                    <li><a href="../part1/index.php">Part 1</a></li>
+                    <li><a href="../part2/index.php">Part 2</a></li>
                 </ul>
             </nav>
 			<div>	
@@ -48,17 +46,18 @@
 
         if(mysqli_num_rows($result) == 0){
 
-            echo " Wrong passowrd or email ";
+            echo '<script>alert("Wrong password or email address")</script>';
 
         }
+
         else{
             while($row = mysqli_fetch_array($result)) {
-                echo $row['id']; // Print a single column data
                 $_SESSION['id'] = $row['id'];
             }
 
-            header("Location:home.php");
-            exit();
+            echo " Success";
+            // header("Location:home.php");
+            // exit();
         }
     }
     

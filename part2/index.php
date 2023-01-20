@@ -7,14 +7,14 @@
     $conn = setup_database();
 
     close_connection($conn);
-    
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Bookmarks (Part 1)</title>
+    <title>E-University</title>
     <link rel="stylesheet" href="../shared/style.css" />
   </head>
   <body>
@@ -25,10 +25,8 @@
         <nav>
           <ul>
             <li><a href="../tma.htm">Home</a></li>
-            <li><a href="../part1/resume.xml">Part 1</a></li>
-            <li><a href="part2.html">Part 2</a></li>
-            <li><a href="../part3/part3.html">Part 3</a></li>
-            <li><a href="../part4/part4.html">Part 4</a></li>
+            <li><a href="../part1/index.php">Part 1</a></li>
+            <li><a href="../part2/index.php">Part 2</a></li>
           </ul>
         </nav>
       </div>
