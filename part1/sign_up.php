@@ -15,12 +15,12 @@
         <div class = "body">
             <h1>Menu</h1>
             <nav>
-          <ul>
-            <li><a href="../tma.htm">Home</a></li>
-            <li><a href="../part1/index.php">Part 1</a></li>
-            <li><a href="../part2/index.php">Part 2</a></li>
-          </ul>
-        </nav>
+                <ul>
+                    <li><a href="../tma.htm">Home</a></li>
+                    <li><a href="../part1/index.php">Part 1</a></li>
+                    <li><a href="../part2/index.php">Part 2</a></li>
+                </ul>
+            </nav>
 			<div>	
             <h3><a href="../tma.htm">Bookmarking App</a></h3>
 
