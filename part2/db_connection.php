@@ -42,15 +42,35 @@ function create_tables($conn){
 
     $tables = 
 
-        "CREATE TABLE users(id int , name varchar(255) NOT NULL, email varchar(255) NOT NULL UNIQUE, password varchar(255), tutor boolean, PRIMARY KEY (id));
+        "CREATE TABLE users(id int , name varchar(255) NOT NULL, email varchar(255) NOT NULL UNIQUE, password varchar(255), PRIMARY KEY (id));
 
-        CREATE TABLE courses(tutor int, unit varchar(255) NOT NULL, lessons TEXT NOT NULL, descriptions TEXT NOT NULL, FOREIGN KEY (tutor) REFERENCES users(id), CONSTRAINT unique_unit UNIQUE (tutor, unit));";
+        CREATE TABLE courses(course varchar(255) NOT NULL, cid int, PRIMARY KEY (cid));
+        
+        CREATE TABLE units(unit varchar(255) NOT NULL, uid int, cid int, PRIMARY KEY (uid),FOREIGN KEY (cid) REFERENCES courses(cid));
+
+        CREATE TABLE descriptions(description TEXT NOT NULL, did int, uid int ,cid int, FOREIGN KEY (cid) REFERENCES courses(cid), FOREIGN KEY (uid) REFERENCES units(uid));
+        ";
     
-    if (mysqli_multi_query($conn, $tables) === TRUE) {
+    if (mysqli_multi_query($conn, $tables) === TRUE){
         echo "Tables created successfully";
     } else {
         echo "Error creating tables: " . $conn->error;
     }
+}
+
+function populate_tables($conn){
+
+    echo "in here dawg";
+
+    $query = 
+    
+    "INSERT INTO courses(course, cid) VALUES ('<course>HTML tutorial</course>', 1);
+    
+    INSERT INTO courses(course, cid) VALUES ('<course>CSS tutorial</course>', 2);
+    
+    INSERT INTO courses(course, cid) VALUES ('<course>JS tutorial</course>', 3);";
+
+    mysqli_multi_query($conn, $query);
 }
 
 // closing the connection
@@ -70,6 +90,13 @@ function setup_database(){
 
     try {
         create_tables($conn);
+    }
+
+    catch(Exception $e){
+    }
+
+    try {
+        populate_tables($conn);
     }
 
     catch(Exception $e){
