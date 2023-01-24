@@ -21,7 +21,7 @@
                 </ul>
             </nav>
 			<div>	
-            <h3><a href="../tma.htm">Bookmarking App</a></h3>
+            <h3>E-University</h3>
 
             <form action = "sign_in.php" method= "POST">
                 <!--form for inputs for login-->
@@ -58,9 +58,8 @@
                 $_SESSION['id'] = $row['id'];
             }
 
-            echo " Success";
-            // header("Location:home.php");
-            // exit();
+            header("Location:home.php");
+            exit();
         }
     }
     

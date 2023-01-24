@@ -22,7 +22,7 @@
                 </ul>
             </nav>
 			<div>	
-            <h3><a href="../tma.htm">Bookmarking App</a></h3>
+            <h3>Bookmarking App</h3>
 
             <form action = "sign_up.php" method= "POST">
                     <!--form for inputs for login-->

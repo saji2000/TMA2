@@ -52,15 +52,13 @@ function create_tables($conn){
         ";
     
     if (mysqli_multi_query($conn, $tables) === TRUE){
-        echo "Tables created successfully";
+
     } else {
         echo "Error creating tables: " . $conn->error;
     }
 }
 
 function populate_tables($conn){
-
-    echo "in here dawg";
 
     $query = 
     

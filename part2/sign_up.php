@@ -22,7 +22,7 @@
                 </ul>
             </nav>
 		<div>	
-        <h3><a href="../tma.htm">Bookmarking App</a></h3>
+        <h3>E-University</h3>
 
         <form action = "sign_up.php" method= "POST">
                 <!--form for inputs for login-->
@@ -58,7 +58,7 @@
 
         // create the account
         else{
-            $query = "INSERT INTO users(id, name, email, password, tutor) VALUES($id, '$name', '$email', '$pass', 0);";
+            $query = "INSERT INTO users(id, name, email, password) VALUES($id, '$name', '$email', '$pass');";
 
             // if id has already been used
             while(mysqli_query($conn, $query)==false){
@@ -69,8 +69,8 @@
 
             // taking the user to the home page
             $_SESSION['id'] = $id;
-            // header("Location:home.php");
-            // exit();
+            header("Location:home.php");
+            exit();
         }
     }
     
