@@ -64,6 +64,9 @@ function create_tables($conn){
 
 function populate_tables($conn){
 
+    $xml=simplexml_load_file("courses.xml") or die("Error: Cannot create object");
+    print_r($xml);
+
     $query = 
     
     "INSERT INTO courses(course, cid) VALUES ('<course>HTML tutorial</course>', 1);

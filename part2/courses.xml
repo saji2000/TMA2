@@ -1,7 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<note>
-  <to>Tove</to>
-  <from>Jani</from>
-  <heading>Reminder</heading>
-  <body>Don't forget me this weekend!</body>
-</note>
+<university>
+  <course>
+    <title>
+      HTML tutorial
+    </title>
+    <unit>
+      <title>
+        unit 1: Tags
+      </title>
+      <lesson>
+        <description>We have different tags</description>
+      </lesson>
+    </unit>
+    <unit>
+      <title>
+        unit 2: Operations
+      </title>
+      <lesson>
+        <description>We have different operations</description>
+      </lesson>
+    </unit>
+    <unit>
+      <title>
+        unit 3: Canvas
+      </title>
+      <lesson>
+        <description>We can use Canvas</description>
+      </lesson>
+    </unit>
+  </course>
+
+  <course>
+    <title>
+      CSS tutorial
+    </title>
+    <unit>
+      <title>
+        unit 1: colors
+      </title>
+      <lesson>
+        <description>use color: blue</description>
+      </lesson>
+    </unit>
+    <unit>
+      <title>
+        unit 2: align
+      </title>
+      <lesson>
+        <description>align: center</description>
+      </lesson>
+    </unit>
+    <unit>
+      <title>
+        unit 3: padding
+      </title>
+      <lesson>
+        <description>padding: 10px</description>
+      </lesson>
+    </unit>
+  </course>
+</university>
