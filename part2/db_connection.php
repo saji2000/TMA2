@@ -46,11 +46,11 @@ function create_tables($conn){
 
         "CREATE TABLE users(id int , name varchar(255) NOT NULL, email varchar(255) NOT NULL UNIQUE, password varchar(255), PRIMARY KEY (id));
 
-        CREATE TABLE courses(course varchar(255) NOT NULL, cid int, PRIMARY KEY (cid));
+        CREATE TABLE courses(course varchar(255) NOT NULL UNIQUE, cid int, PRIMARY KEY (cid));
         
-        CREATE TABLE units(unit varchar(255) NOT NULL, uid int, cid int, PRIMARY KEY (uid),FOREIGN KEY (cid) REFERENCES courses(cid));
+        CREATE TABLE units(unit varchar(255) NOT NULL UNIQUE, uid int, cid int, PRIMARY KEY (uid),FOREIGN KEY (cid) REFERENCES courses(cid));
 
-        CREATE TABLE descriptions(description TEXT NOT NULL, did int, uid int ,cid int, FOREIGN KEY (cid) REFERENCES courses(cid), FOREIGN KEY (uid) REFERENCES units(uid));
+        CREATE TABLE descriptions(description TEXT NOT NULL UNIQUE, did int, uid int ,cid int, FOREIGN KEY (cid) REFERENCES courses(cid), FOREIGN KEY (uid) REFERENCES units(uid));
         ";
     
     if (mysqli_multi_query($conn, $tables) === TRUE){
@@ -65,22 +65,34 @@ function create_tables($conn){
 function populate_tables($conn){
 
     $xml=simplexml_load_file("courses.xml") or die("Error: Cannot create object");
-    print_r($xml);
+    // print_r($xml);
+    // echo 'here';
+    // print_r($xml->course[0]->unit[0]->title);
 
-    $query = 
-    
-    "INSERT INTO courses(course, cid) VALUES ('<course>HTML tutorial</course>', 1);
-    
-    INSERT INTO courses(course, cid) VALUES ('<course>CSS tutorial</course>', 2);
-    
-    INSERT INTO courses(course, cid) VALUES ('<course>JS tutorial</course>', 3);
-    
-    INSERT INTO units(unit, uid, cid) VALUES ('<units>Unit 1, tags</units>, <unit>Unit 2, operations</unit>', 1, 1);
-    
-    
-    ";
+    foreach($xml->children() as $course){
 
-    mysqli_multi_query($conn, $query);
+        $cid = rand(1, 10000);
+        $title = $course->title;
+        $query = "INSERT INTO courses(course, cid) VALUES ('$title', $cid);";
+        mysqli_multi_query($conn, $query);
+
+        foreach($course->children() as $unit){
+            print_r($unit->title);
+            $uid = rand(1, 10000);
+            $unit_title = $unit->title;
+            $query = "INSERT INTO units(unit, uid, cid) VALUES ('$unit_title', $uid, $cid);";
+            mysqli_multi_query($conn, $query);
+        }
+    }
+
+    // foreach($xml->children() as $courses){
+    //     $id = rand(1, 10000);
+    //     $title = $courses->title;
+    //     $query = "INSERT INTO courses(course, cid) VALUES ('$title', $id);";
+    //     mysqli_multi_query($conn, $query);
+    // }
+
+    // mysqli_multi_query($conn, $query);
 }
 
 // closing the connection
