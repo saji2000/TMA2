@@ -21,6 +21,8 @@ function create_db(){
 
     mysqli_query($conn, $sql);
 
+    // create_tables($conn);
+
     return $conn;
 }
 
@@ -56,6 +58,8 @@ function create_tables($conn){
     } else {
         echo "Error creating tables: " . $conn->error;
     }
+
+    populate_tables($conn);
 }
 
 function populate_tables($conn){
@@ -66,7 +70,12 @@ function populate_tables($conn){
     
     INSERT INTO courses(course, cid) VALUES ('<course>CSS tutorial</course>', 2);
     
-    INSERT INTO courses(course, cid) VALUES ('<course>JS tutorial</course>', 3);";
+    INSERT INTO courses(course, cid) VALUES ('<course>JS tutorial</course>', 3);
+    
+    INSERT INTO units(unit, uid, cid) VALUES ('<units>Unit 1, tags</units>, <unit>Unit 2, operations</unit>', 1, 1);
+    
+    
+    ";
 
     mysqli_multi_query($conn, $query);
 }
@@ -91,6 +100,7 @@ function setup_database(){
     }
 
     catch(Exception $e){
+        $conn = connect_db();
     }
 
     try {

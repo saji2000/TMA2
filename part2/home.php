@@ -37,21 +37,13 @@
         <div> 
             <h3>Please select a course to start: </h3>
 
-            <label for="color">Background Color:</label>
-<select name="color" id="color">
-	<option value="">--- Choose a color ---</option>
-	<option value="red">Red</option>
-	<option value="green">Green</option>
-	<option value="blue">Blue</option>
-</select>
-
             <?php 
 
 
                 $conn = setup_database();
 
                 $id = $_SESSION['id'];
-                $query = "SELECT course FROM courses;";
+                $query = "SELECT * FROM courses;";
 
                 try{
                     $result = mysqli_query($conn, $query);
@@ -67,10 +59,42 @@
                 }
                 else{
                     while($row = mysqli_fetch_array($result)) {
+
                         $course = $row['course'];
+
+                        $id = $row ['cid'];
+
+
+                        echo "here is the id: $id";
 
 
                         print("<a>$course</a> &nbsp;"); // Print a single column data   
+                    }
+                }
+
+                $query = "SELECT unit FROM units;";
+
+                try{
+                    $result = mysqli_query($conn, $query);
+                }
+                catch(Exception $e) {
+                    echo "error: $e";
+                }
+
+                if(mysqli_num_rows($result) == 0){
+
+                    echo " No courses yet ";
+        
+                }
+                else{
+                    while($row = mysqli_fetch_array($result)) {
+                        $unit = $row['unit'];
+
+                        
+                        // echo "here is the $row";
+
+
+                        print("<a>$unit</a> &nbsp;"); // Print a single column data   
                     }
                 }
                 // }
