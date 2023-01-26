@@ -64,11 +64,7 @@
 
                         $id = $row ['cid'];
 
-
-                        echo "here is the id: $id";
-
-
-                        print("<a>$course</a> &nbsp;"); // Print a single column data   
+                        // print("<a>$course</a> &nbsp;"); // Print a single column data   
                     }
                 }
 
@@ -94,7 +90,7 @@
                         // echo "here is the $row";
 
 
-                        print("<a>$unit</a> &nbsp;"); // Print a single column data   
+                        // print("<a>$unit</a> &nbsp;"); // Print a single column data   
                     }
                 }
                 // }

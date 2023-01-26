@@ -76,11 +76,17 @@ function populate_tables($conn){
         $query = "INSERT INTO courses(course, cid) VALUES ('$title', $cid);";
         mysqli_multi_query($conn, $query);
 
-        foreach($course->children() as $unit){
-            print_r($unit->title);
+        foreach($course->units->children() as $unit){
+            echo " $title: ";
+            echo($unit->title);
             $uid = rand(1, 10000);
             $unit_title = $unit->title;
             $query = "INSERT INTO units(unit, uid, cid) VALUES ('$unit_title', $uid, $cid);";
+            mysqli_multi_query($conn, $query);
+
+            $did = rand(1, 10000);
+            $unit_description = $unit->lesson->description;
+            $query = "INSERT INTO descriptions(description, did, uid, cid) VALUES ('$unit_description',$did, $uid, $cid);";
             mysqli_multi_query($conn, $query);
         }
     }
