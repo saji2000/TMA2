@@ -68,9 +68,6 @@ function create_tables($conn){
 function populate_tables($conn){
 
     $xml=simplexml_load_file("courses.xml") or die("Error: Cannot create object");
-    // print_r($xml);
-    // echo 'here';
-    // print_r($xml->course[0]->unit[0]->title);
 
     foreach($xml->children() as $course){
 
