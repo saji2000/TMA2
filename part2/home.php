@@ -86,14 +86,9 @@
                     while($row = mysqli_fetch_array($result)) {
                         $unit = $row['unit'];
 
-                        
-                        // echo "here is the $row";
-
-
                         // print("<a>$unit</a> &nbsp;"); // Print a single column data   
                     }
                 }
-                // }
 
                 close_connection($conn);
 
