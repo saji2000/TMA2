@@ -49,11 +49,14 @@ function create_tables($conn){
 
         CREATE TABLE courses(course varchar(255) NOT NULL UNIQUE, cid int, PRIMARY KEY (cid));
         
-        CREATE TABLE units(unit varchar(255) NOT NULL UNIQUE, uid int, cid int, PRIMARY KEY (uid),
+        CREATE TABLE units(unit varchar(255) NOT NULL UNIQUE, uid int, cid int,
         FOREIGN KEY (cid) REFERENCES courses(cid));
 
         CREATE TABLE descriptions(description TEXT NOT NULL UNIQUE, did int, uid int ,cid int, 
-        FOREIGN KEY (cid) REFERENCES courses(cid), FOREIGN KEY (uid) REFERENCES units(uid));
+        FOREIGN KEY (cid) REFERENCES courses(cid));
+
+        CREATE TABLE assignments(assignment TEXT NOT NULL UNIQUE, did int, uid int ,cid int, 
+        FOREIGN KEY (cid) REFERENCES courses(cid));
         ";
     
     if (mysqli_multi_query($conn, $tables) === TRUE){
@@ -65,14 +68,19 @@ function create_tables($conn){
     populate_tables($conn);
 }
 
+
+// our xml parser in php which populates the tables that were created
 function populate_tables($conn){
 
     $xml=simplexml_load_file("courses.xml") or die("Error: Cannot create object");
 
+    // primary key and the order are decided by cid
+    $cid = 0;    
     foreach($xml->children() as $course){
 
         // populating the tables with courses
-        $cid = rand(1, 10000);
+        $uid = 0;
+        ++$cid;
         $title = $course->title;
         $query = "INSERT INTO courses(course, cid) VALUES ('$title', $cid);";
         mysqli_multi_query($conn, $query);
@@ -82,16 +90,24 @@ function populate_tables($conn){
             // populating the tables with units
             echo " $title: ";
             echo($unit->title);
-            $uid = rand(1, 10000);
+            $did = 0;
+            ++$uid;
             $unit_title = $unit->title;
             $query = "INSERT INTO units(unit, uid, cid) VALUES ('$unit_title', $uid, $cid);";
             mysqli_multi_query($conn, $query);
 
             // populating the tables with descriptions
-            $did = rand(1, 10000);
-            $unit_description = $unit->lesson->description;
-            $query = "INSERT INTO descriptions(description, did, uid, cid) VALUES ('$unit_description',$did, $uid, $cid);";
-            mysqli_multi_query($conn, $query);
+            foreach($unit->lesson->children() as $description){
+                ++$did;
+                $query = "INSERT INTO descriptions(description, did, uid, cid) VALUES ('$description',$did, $uid, $cid);";
+                mysqli_multi_query($conn, $query);
+            }
+            foreach($unit->assignment->children() as $description){
+                ++$did;
+                $query = "INSERT INTO descriptions(description, did, uid, cid) VALUES ('$description',$did, $uid, $cid);";
+                mysqli_multi_query($conn, $query);
+            }
+            
         }
     }
 }
