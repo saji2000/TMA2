@@ -111,7 +111,6 @@ function populate_tables($conn){
                 $query = "INSERT INTO assignments(description, did, uid, cid) VALUES ('$description',$did, $uid, $cid);";
                 mysqli_multi_query($conn, $query);
             }
-            
         }
 
         // parsing the quizzes
