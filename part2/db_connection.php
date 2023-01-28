@@ -105,7 +105,7 @@ function populate_tables($conn){
                 mysqli_multi_query($conn, $query);
             }
             $did = 0;
-
+            // populating the tables with assignment descriptions
             foreach($unit->assignment->children() as $description){
                 ++$did;
                 $query = "INSERT INTO assignments(description, did, uid, cid) VALUES ('$description',$did, $uid, $cid);";
@@ -114,6 +114,7 @@ function populate_tables($conn){
             
         }
 
+        // parsing the quizzes
         $qid = 0;
         foreach($course->quiz->children() as $question){
 
@@ -124,19 +125,14 @@ function populate_tables($conn){
             $array = [];
 
             foreach($question->option as $option){
-                echo "$option";
                 array_push($array, $option);
             }
-            echo " $inquiry ";
-            // echo " $array[0] ";
-            
+
             $option_1 = $array[0];
             $option_2 = $array[1];
             $option_3 = $array[2];
             $option_4 = $array[3];
             $answer = $question->answer;
-            echo " $answer ";
-
 
             $query = "INSERT INTO quizzes(inquiry, option_1, option_2, option_3, option_4, answer, qid, cid) 
             VALUES ('$inquiry', '$option_1', '$option_2', '$option_3', '$option_4', $answer , $qid, $cid);";
