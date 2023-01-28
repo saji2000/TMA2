@@ -37,7 +37,7 @@
     </units>
     <quiz>
       <question>
-        <query>What tag is not correct</query>
+        <inquiry>What tag is not correct</inquiry>
         <option>p</option>
         <option>a</option>
         <option>bold</option>
@@ -45,7 +45,7 @@
         <answer>4</answer>
       </question>
       <question>
-        <query>What operation is not correct</query>
+        <inquiry>What operation is not correct</inquiry>
         <option>+</option>
         <option>-</option>
         <option>$</option>

@@ -58,7 +58,7 @@ function create_tables($conn){
         CREATE TABLE assignments(description TEXT NOT NULL UNIQUE, did int, uid int ,cid int, 
         FOREIGN KEY (cid) REFERENCES courses(cid));
 
-        CREATE TABLE quizzes(question varchar (255), option_1 varchar (255), option_2 varchar (255), option_3 varchar (255), 
+        CREATE TABLE quizzes(inquiry varchar (255), option_1 varchar (255), option_2 varchar (255), option_3 varchar (255), 
         option_4 varchar (255), answer int, qid int, cid int, FOREIGN KEY (cid) REFERENCES courses(cid));
         ";
     
@@ -115,9 +115,34 @@ function populate_tables($conn){
             
         }
 
-        // foreach($course->quiz->question->children() as $question){
+        $qid = 0;
+        foreach($course->quiz->children() as $question){
 
-        // }
+            ++$qid;
+
+            $inquiry = $question->inquiry;
+
+            $array = [];
+
+            foreach($course->quiz->question->option as $option){
+                array_push($array, $option);
+            }
+            echo " $inquiry ";
+            echo " $array[0] ";
+            
+            $option_1 = $array[0];
+            $option_2 = $array[1];
+            $option_3 = $array[2];
+            $option_4 = $array[3];
+            $answer = $question->answer;
+            echo " $answer ";
+
+
+            $query = "INSERT INTO quizzes(inquiry, option_1, option_2, option_3, option_4, answer, qid, cid) 
+            VALUES ('$inquiry', '$option_1', '$option_2', '$option_3', '$option_4', $answer , $qid, $cid);";
+
+            mysqli_multi_query($conn, $query);
+        }
     }
 }
 
