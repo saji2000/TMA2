@@ -55,8 +55,11 @@ function create_tables($conn){
         CREATE TABLE descriptions(description TEXT NOT NULL UNIQUE, did int, uid int ,cid int, 
         FOREIGN KEY (cid) REFERENCES courses(cid));
 
-        CREATE TABLE assignments(assignment TEXT NOT NULL UNIQUE, did int, uid int ,cid int, 
+        CREATE TABLE assignments(description TEXT NOT NULL UNIQUE, did int, uid int ,cid int, 
         FOREIGN KEY (cid) REFERENCES courses(cid));
+
+        CREATE TABLE quizzes(question varchar (255), option_1 varchar (255), option_2 varchar (255), option_3 varchar (255), 
+        option_4 varchar (255), answer int, qid int, cid int, FOREIGN KEY (cid) REFERENCES courses(cid));
         ";
     
     if (mysqli_multi_query($conn, $tables) === TRUE){
@@ -102,13 +105,19 @@ function populate_tables($conn){
                 $query = "INSERT INTO descriptions(description, did, uid, cid) VALUES ('$description',$did, $uid, $cid);";
                 mysqli_multi_query($conn, $query);
             }
+            $did = 0;
+
             foreach($unit->assignment->children() as $description){
                 ++$did;
-                $query = "INSERT INTO descriptions(description, did, uid, cid) VALUES ('$description',$did, $uid, $cid);";
+                $query = "INSERT INTO assignments(description, did, uid, cid) VALUES ('$description',$did, $uid, $cid);";
                 mysqli_multi_query($conn, $query);
             }
             
         }
+
+        // foreach($course->quiz->question->children() as $question){
+
+        // }
     }
 }
 
