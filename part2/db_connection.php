@@ -91,8 +91,7 @@ function populate_tables($conn){
         foreach($course->units->children() as $unit){
 
             // populating the tables with units
-            echo " $title: ";
-            echo($unit->title);
+        
             $did = 0;
             ++$uid;
             $unit_title = $unit->title;
@@ -124,11 +123,12 @@ function populate_tables($conn){
 
             $array = [];
 
-            foreach($course->quiz->question->option as $option){
+            foreach($question->option as $option){
+                echo "$option";
                 array_push($array, $option);
             }
             echo " $inquiry ";
-            echo " $array[0] ";
+            // echo " $array[0] ";
             
             $option_1 = $array[0];
             $option_2 = $array[1];
