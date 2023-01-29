@@ -85,5 +85,23 @@
         </lesson>
       </unit>
     </units>
+    <quiz>
+      <question>
+        <inquiry>What tag is not correct</inquiry>
+        <option>p</option>
+        <option>a</option>
+        <option>bold</option>
+        <option>o</option>
+        <answer>4</answer>
+      </question>
+      <question>
+        <inquiry>What operation is not correct</inquiry>
+        <option>+</option>
+        <option>-</option>
+        <option>$</option>
+        <option>*</option>
+        <answer>3</answer>
+      </question>
+    </quiz>
   </course>
 </university>
