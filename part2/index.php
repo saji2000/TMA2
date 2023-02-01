@@ -32,11 +32,11 @@
       </div>
 
       <div class="description">
-        <h3 class="title">Most Popular Bookmarks</h3>
-        <div class="popular_bookmarks">
-
+        <h3 class="title">E-University</h3>
+        <div>
+          Welcome to the E-University, in here you can choose from our offered courses to start learning about 
+          web development and programming concepts
         </div>
-
         <div> 
             <h3>Sign-In: </h3>
                 <a href="sign_in.php">Sign-In</a>

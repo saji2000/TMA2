@@ -37,62 +37,69 @@
         <div> 
             <h3>Please select a course to start: </h3>
 
-            <?php 
+            <form method= "POST" name="add_bookmark">
+
+                <table class = "tabele">
+              <?php 
 
 
-                $conn = setup_database();
+                  $conn = setup_database();
 
-                $id = $_SESSION['id'];
-                $query = "SELECT * FROM courses;";
+                  $id = $_SESSION['id'];
+                  $query = "SELECT * FROM courses;";
 
-                try{
-                    $result = mysqli_query($conn, $query);
-                }
-                catch(Exception $e) {
-                    echo "error: $e";
-                }
+                  try{
+                      $result = mysqli_query($conn, $query);
+                  }
+                  catch(Exception $e) {
+                      echo "error: $e";
+                  }
 
-                if(mysqli_num_rows($result) == 0){
+                  if(mysqli_num_rows($result) == 0){
 
-                    echo " No courses yet ";
-        
-                }
-                else{
-                    while($row = mysqli_fetch_array($result)) {
+                      echo " No courses yet ";
+          
+                  }
+                  else{
+                      while($row = mysqli_fetch_array($result)) {
 
-                        $course = $row['course'];
+                          $course = $row['course'];
 
-                        $id = $row ['cid'];
+                          $id = $row ['cid'];
 
-                        // print("<a>$course</a> &nbsp;"); // Print a single column data   
-                    }
-                }
+                          // print("); // Print a single column data   
+                          print_r("<tr><td>$course</td><td><button type ='submit' id='$course' name='$course_submit'>Here</button></td></tr>");
+                      }
+                  }
 
-                $query = "SELECT unit FROM units;";
+                  $query = "SELECT unit FROM units;";
 
-                try{
-                    $result = mysqli_query($conn, $query);
-                }
-                catch(Exception $e) {
-                    echo "error: $e";
-                }
+                  try{
+                      $result = mysqli_query($conn, $query);
+                  }
+                  catch(Exception $e) {
+                      echo "error: $e";
+                  }
 
-                if(mysqli_num_rows($result) == 0){
+                  if(mysqli_num_rows($result) == 0){
 
-                    echo " No courses yet ";
-        
-                }
-                else{
-                    while($row = mysqli_fetch_array($result)) {
-                        $unit = $row['unit'];
+                      echo " No courses yet ";
+          
+                  }
+                  else{
+                      while($row = mysqli_fetch_array($result)) {
+                          $unit = $row['unit'];
 
-                        // print("<a>$unit</a> &nbsp;"); // Print a single column data   
-                    }
-                }
+                          // print("<a>$unit</a> &nbsp;"); // Print a single column data   
+                      }
+                  }
 
-                close_connection($conn);
+                  close_connection($conn);
 
-            ?>
+              ?>
+              </table>
+            </form>
+
         </div>
       </div>
 
