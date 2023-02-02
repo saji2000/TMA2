@@ -68,29 +68,7 @@
                           $id = $row ['cid'];
 
                           // print("); // Print a single column data   
-                          print_r("<tr><td>$course</td><td><button type ='submit' id='$course' name='$course_submit'>Here</button></td></tr>");
-                      }
-                  }
-
-                  $query = "SELECT unit FROM units;";
-
-                  try{
-                      $result = mysqli_query($conn, $query);
-                  }
-                  catch(Exception $e) {
-                      echo "error: $e";
-                  }
-
-                  if(mysqli_num_rows($result) == 0){
-
-                      echo " No courses yet ";
-          
-                  }
-                  else{
-                      while($row = mysqli_fetch_array($result)) {
-                          $unit = $row['unit'];
-
-                          // print("<a>$unit</a> &nbsp;"); // Print a single column data   
+                          print_r("<tr><td>$course</td><td><button type ='submit' id='$course' name='$course_submit'>Start</button></td></tr>");
                       }
                   }
 
