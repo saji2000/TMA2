@@ -55,6 +55,7 @@
 
                 $cid = $row['cid'];
 
+                // fetching the units
                 $query = "SELECT unit, uid FROM units WHERE cid = $cid ORDER BY uid ASC;";
 
                 $result = mysqli_query($conn, $query);
@@ -65,17 +66,19 @@
 
                     $uid = $row['uid'];
 
-                    print_r("<h4>$unit<h4>");
+                    print_r("<h4>$unit</h4>");
 
-                    $query_descripton = "SELECT description FROM description WHERE cid = $cid AND uid = $uid ORDER BY did ASC;";
+                    // fetching the descriptions
 
+                    $query_descripton = "SELECT description FROM descriptions WHERE cid = $cid AND uid = $uid ORDER BY did ASC;";
+                    
                     $result_descripton = mysqli_query($conn, $query_descripton);
 
                     while($row_descripton = mysqli_fetch_array($result_descripton)) {
-    
+
                         $description = $row_descripton['description'];
     
-                        print_r("<h4>$description<h4>");
+                        print_r("<p>$description</p>");
 
                     }
                 }
