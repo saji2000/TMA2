@@ -44,12 +44,12 @@ function create_tables($conn){
 
     $tables = 
 
-        "CREATE TABLE users(id int , name varchar(255) NOT NULL, email varchar(255) NOT NULL UNIQUE, 
-        password varchar(255), PRIMARY KEY (id));
+        "CREATE TABLE users(id int , name TEXT NOT NULL, email TEXT NOT NULL UNIQUE, 
+        password TEXT, PRIMARY KEY (id));
 
-        CREATE TABLE courses(course varchar(255) NOT NULL UNIQUE, cid int, PRIMARY KEY (cid));
+        CREATE TABLE courses(course TEXT NOT NULL UNIQUE, cid int, PRIMARY KEY (cid));
         
-        CREATE TABLE units(unit varchar(255) NOT NULL UNIQUE, uid int, cid int,
+        CREATE TABLE units(unit TEXT NOT NULL UNIQUE, uid int, cid int,
         FOREIGN KEY (cid) REFERENCES courses(cid));
 
         CREATE TABLE descriptions(description TEXT NOT NULL UNIQUE, did int, uid int ,cid int, 
@@ -58,8 +58,8 @@ function create_tables($conn){
         CREATE TABLE assignments(description TEXT NOT NULL UNIQUE, did int, uid int ,cid int, 
         FOREIGN KEY (cid) REFERENCES courses(cid));
 
-        CREATE TABLE quizzes(inquiry varchar (255), option_1 varchar (255), option_2 varchar (255), option_3 varchar (255), 
-        option_4 varchar (255), answer int, qid int, cid int, FOREIGN KEY (cid) REFERENCES courses(cid));
+        CREATE TABLE quizzes(inquiry TEXT , option_1 TEXT , option_2 TEXT , option_3 TEXT , 
+        option_4 TEXT , answer int, qid int, cid int, FOREIGN KEY (cid) REFERENCES courses(cid));
         ";
     
     if (mysqli_multi_query($conn, $tables) === TRUE){

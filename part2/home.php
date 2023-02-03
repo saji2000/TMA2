@@ -37,7 +37,7 @@
         <div> 
             <h3>Please select a course to start: </h3>
 
-            <form method= "POST" name="add_bookmark">
+            <form method= "POST" name="start_course">
 
                 <table class = "tabele">
               <?php 
@@ -48,6 +48,7 @@
                   $id = $_SESSION['id'];
                   $query = "SELECT * FROM courses;";
 
+                  // fetching the courses
                   try{
                       $result = mysqli_query($conn, $query);
                   }
@@ -67,8 +68,7 @@
 
                           $id = $row ['cid'];
 
-                          // print("); // Print a single column data   
-                          print_r("<tr><td>$course</td><td><button type ='submit' id='$course' name='$course_submit'>Start</button></td></tr>");
+                          print_r("<tr><td>$course</td><td><button type ='submit' name='start_course' value='$course'>Start</button></td></tr>");
                       }
                   }
 
@@ -77,6 +77,24 @@
               ?>
               </table>
             </form>
+
+            <?php 
+              $conn = setup_database();
+
+              $id = $_SESSION['id'];
+
+              if(isset($_POST['start_course'])){
+
+                // echo "$course";
+
+                $_SESSION['course'] = $_POST['start_course'];
+
+                // sleep(5);
+
+                header("Location:course.php");
+                exit();
+              }
+            ?>
 
         </div>
       </div>
