@@ -82,6 +82,20 @@
                     }
                 }
 
+                print_r("<h3>Quiz</h3>");
+
+                $query = "SELECT * FROM quizzes WHERE cid = $cid ORDER BY qid ASC;";
+
+                $result = mysqli_query($conn, $query);
+
+                while($row = mysqli_fetch_array($result)) {
+
+                    $question = $row['inquiry'];
+
+                    print_r("<p>$question</p>");
+
+                }
+
             ?>
         </div>
       </div>
