@@ -92,7 +92,20 @@
 
                     $question = $row['inquiry'];
 
-                    print_r("<p>$question</p>");
+                    $qid = $row['qid'];
+
+                    $o1 = $row['option_1'];
+                    $o2 = $row['option_2'];
+                    $o3 = $row['option_3'];
+                    $o4 = $row['option_4'];
+
+                    print_r("<p>Q$qid: $question</p>");
+
+                    print_r("<input id='option_4' name='$qid' type='radio'>$o1<br>");
+                    print_r("<input id='option_4' name='$qid' type='radio'>$o2<br>");
+                    print_r("<input id='option_4' name='$qid' type='radio'>$o3<br>");
+                    print_r("<input id='option_4' name='$qid' type='radio'>$o4<br>");
+
 
                 }
 
