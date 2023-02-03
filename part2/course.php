@@ -95,7 +95,11 @@
 
                 print_r("<form method='POST' name='quiz'>");
 
+                $q_num = 0;
+
                 while($row = mysqli_fetch_array($result)) {
+
+                    ++$q_num;
 
                     $question = $row['inquiry'];
 
@@ -108,10 +112,10 @@
 
                     print_r("<p>Q$qid: $question?</p>");
 
-                    print_r("<input value='o1_$qid' name='$qid' type='radio'>$o1<br>");
-                    print_r("<input value='o2_$qid' name='$qid' type='radio'>$o2<br>");
-                    print_r("<input value='o3_$qid' name='$qid' type='radio'>$o3<br>");
-                    print_r("<input value='o4_$qid' name='$qid' type='radio'>$o4<br>");
+                    print_r("<input value='$o1' name='$qid' type='radio'>$o1<br>");
+                    print_r("<input value='$o2' name='$qid' type='radio'>$o2<br>");
+                    print_r("<input value='$o3' name='$qid' type='radio'>$o3<br>");
+                    print_r("<input value='$o4' name='$qid' type='radio'>$o4<br>");
 
                 }
 
@@ -120,8 +124,24 @@
                 print_r("</form>");
 
                 if(isset($_POST['finish_quiz'])){
-                    $ans = $_POST["$qid"];
-                    echo $ans;
+                    
+                    $query = "SELECT answer FROM quizzes WHERE cid = $cid ORDER BY qid ASC;";
+
+                    $result = mysqli_query($conn, $query);
+
+                    $grade = 0;
+                    
+                    for($x = 1; $x <= $q_num; $x++){
+                        while($row = mysqli_fetch_array($result)) {
+                            $ans = $row['answer'];
+
+                            if($_POST['$x'] == $ans){
+                                $grade++;
+                            }
+                        }
+                    }
+
+                    echo "$grade";
                 }
 
 
