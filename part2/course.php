@@ -84,6 +84,11 @@
 
                 print_r("<h3>Quiz</h3>");
 
+            ?>
+        </div>
+        <div>
+            <?php
+
                 $query = "SELECT * FROM quizzes WHERE cid = $cid ORDER BY qid ASC;";
 
                 $result = mysqli_query($conn, $query);
@@ -99,15 +104,16 @@
                     $o3 = $row['option_3'];
                     $o4 = $row['option_4'];
 
-                    print_r("<p>Q$qid: $question</p>");
+                    print_r("<p>Q$qid: $question?</p>");
 
-                    print_r("<input id='option_4' name='$qid' type='radio'>$o1<br>");
-                    print_r("<input id='option_4' name='$qid' type='radio'>$o2<br>");
-                    print_r("<input id='option_4' name='$qid' type='radio'>$o3<br>");
-                    print_r("<input id='option_4' name='$qid' type='radio'>$o4<br>");
-
+                    print_r("<input id='o1_$qid' name='$qid' type='radio'>$o1<br>");
+                    print_r("<input id='o2_$qid' name='$qid' type='radio'>$o2<br>");
+                    print_r("<input id='o3_$qid' name='$qid' type='radio'>$o3<br>");
+                    print_r("<input id='o4_$qid' name='$qid' type='radio'>$o4<br>");
 
                 }
+
+                close_connection($conn);
 
             ?>
         </div>
