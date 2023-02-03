@@ -66,7 +66,7 @@
 
                           $course = $row['course'];
 
-                          $id = $row ['cid'];
+                          // showing the courses
 
                           print_r("<tr><td>$course</td><td><button type ='submit' name='start_course' value='$course'>Start</button></td></tr>");
                       }
@@ -85,11 +85,7 @@
 
               if(isset($_POST['start_course'])){
 
-                // echo "$course";
-
                 $_SESSION['course'] = $_POST['start_course'];
-
-                // sleep(5);
 
                 header("Location:course.php");
                 exit();
