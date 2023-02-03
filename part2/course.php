@@ -69,7 +69,6 @@
                     print_r("<h4>$unit</h4>");
 
                     // fetching the descriptions
-
                     $query_descripton = "SELECT description FROM descriptions WHERE cid = $cid AND uid = $uid ORDER BY did ASC;";
                     
                     $result_descripton = mysqli_query($conn, $query_descripton);
