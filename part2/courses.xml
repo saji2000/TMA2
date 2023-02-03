@@ -42,7 +42,7 @@
         <option>a</option>
         <option>bold</option>
         <option>o</option>
-        <answer>4</answer>
+        <answer>o</answer>
       </question>
       <question>
         <inquiry>What operation is not correct</inquiry>
@@ -50,7 +50,7 @@
         <option>-</option>
         <option>$</option>
         <option>*</option>
-        <answer>3</answer>
+        <answer>$</answer>
       </question>
     </quiz>
   </course>
@@ -92,7 +92,7 @@
         <option>a</option>
         <option>bold</option>
         <option>o</option>
-        <answer>4</answer>
+        <answer>o</answer>
       </question>
       <question>
         <inquiry>What operation is not correct</inquiry>
@@ -100,7 +100,7 @@
         <option>-</option>
         <option>$</option>
         <option>*</option>
-        <answer>3</answer>
+        <answer>$</answer>
       </question>
     </quiz>
   </course>

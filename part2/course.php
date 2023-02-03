@@ -93,6 +93,8 @@
 
                 $result = mysqli_query($conn, $query);
 
+                print_r("<form method='POST' name='quiz'>");
+
                 while($row = mysqli_fetch_array($result)) {
 
                     $question = $row['inquiry'];
@@ -106,12 +108,22 @@
 
                     print_r("<p>Q$qid: $question?</p>");
 
-                    print_r("<input id='o1_$qid' name='$qid' type='radio'>$o1<br>");
-                    print_r("<input id='o2_$qid' name='$qid' type='radio'>$o2<br>");
-                    print_r("<input id='o3_$qid' name='$qid' type='radio'>$o3<br>");
-                    print_r("<input id='o4_$qid' name='$qid' type='radio'>$o4<br>");
+                    print_r("<input value='o1_$qid' name='$qid' type='radio'>$o1<br>");
+                    print_r("<input value='o2_$qid' name='$qid' type='radio'>$o2<br>");
+                    print_r("<input value='o3_$qid' name='$qid' type='radio'>$o3<br>");
+                    print_r("<input value='o4_$qid' name='$qid' type='radio'>$o4<br>");
 
                 }
+
+                print_r("<br><button type ='submit' name='finish_quiz'>Finish Quiz</button>");
+
+                print_r("</form>");
+
+                if(isset($_POST['finish_quiz'])){
+                    $ans = $_POST["$qid"];
+                    echo $ans;
+                }
+
 
                 close_connection($conn);
 

@@ -59,7 +59,7 @@ function create_tables($conn){
         FOREIGN KEY (cid) REFERENCES courses(cid));
 
         CREATE TABLE quizzes(inquiry TEXT , option_1 TEXT , option_2 TEXT , option_3 TEXT , 
-        option_4 TEXT , answer int, qid int, cid int, FOREIGN KEY (cid) REFERENCES courses(cid));
+        option_4 TEXT , answer TEXT, qid int, cid int, FOREIGN KEY (cid) REFERENCES courses(cid));
         ";
     
     if (mysqli_multi_query($conn, $tables) === TRUE){
@@ -134,7 +134,7 @@ function populate_tables($conn){
             $answer = $question->answer;
 
             $query = "INSERT INTO quizzes(inquiry, option_1, option_2, option_3, option_4, answer, qid, cid) 
-            VALUES ('$inquiry', '$option_1', '$option_2', '$option_3', '$option_4', $answer , $qid, $cid);";
+            VALUES ('$inquiry', '$option_1', '$option_2', '$option_3', '$option_4', '$answer' , $qid, $cid);";
 
             mysqli_multi_query($conn, $query);
         }
