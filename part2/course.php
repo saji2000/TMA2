@@ -44,7 +44,7 @@
 
                 print("<h4> Welcome to the $course</h4>");
 
-                $query = "SELECT course FROM courses WHERE cid = 1;";
+                $query = "SELECT cid FROM courses WHERE course = '$course';";
 
                 $result = mysqli_query($conn, $query);
 

@@ -35,9 +35,6 @@
 
     $conn = setup_database();
 
-    $xml=simplexml_load_file("courses.xml") or die("Error: Cannot create object");
-    print_r($xml);
-
     if(isset($_POST['submit'])){
         
         $email = $_POST['email'];
