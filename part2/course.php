@@ -132,18 +132,20 @@
 
                     $grade = 0;
                     
-                    for($x = 1; $x <= $q_num; $x++){
-                        while($row = mysqli_fetch_array($result)) {
-                            $ans = trim($row['answer']);
-                            $selected = $_POST["$x"];
-                            print_r("answer: $ans | selected: $selected. \n");
-                            if($selected == $ans){
-                                $grade++;
-                            }
-                        }
-                    }
+                    $x = 1;
+                    while($row = mysqli_fetch_array($result)) {
+                        $ans = trim($row['answer']);
+                        $selected = $_POST["$x"];
 
-                    echo "$grade";
+                        if($selected == $ans){
+                            $grade++;
+                        }
+                        $x++;
+                    }
+                    
+
+                    print_r("<h4>Your grade is $grade out of $q_num</h4>");
+                    print_r("<script>alert('Your grade is $grade out of $q_num')</script>");
                 }
 
 
