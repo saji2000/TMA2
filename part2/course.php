@@ -121,7 +121,7 @@
 
                 print_r("<br><button type ='submit' name='finish_quiz'>Finish Quiz</button>");
 
-                print_r("</form>");
+                print_r("</form><br><br>");
 
                 // grading the quiz
                 if(isset($_POST['finish_quiz'])){
@@ -133,8 +133,11 @@
                     $grade = 0;
                     
                     $x = 1;
+                    
                     while($row = mysqli_fetch_array($result)) {
+
                         $ans = trim($row['answer']);
+
                         $selected = $_POST["$x"];
 
                         if($selected == $ans){
