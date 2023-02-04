@@ -62,6 +62,9 @@
           
                   }
                   else{
+
+                    print_r("<h4>Avaliable courses: </h4>");
+
                       while($row = mysqli_fetch_array($result)) {
 
                           $course = $row['course'];
