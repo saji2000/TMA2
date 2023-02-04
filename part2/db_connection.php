@@ -68,7 +68,6 @@ function create_tables($conn){
         echo "Error creating tables: " . $conn->error;
     }
 
-    // populate_tables($conn);
 }
 
 

@@ -123,8 +123,9 @@
 
                 print_r("</form>");
 
+                // grading the quiz
                 if(isset($_POST['finish_quiz'])){
-                    
+
                     $query = "SELECT answer FROM quizzes WHERE cid = $cid ORDER BY qid ASC;";
 
                     $result = mysqli_query($conn, $query);

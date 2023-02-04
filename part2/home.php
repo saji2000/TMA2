@@ -66,7 +66,7 @@
 
                           $course = $row['course'];
 
-                          // showing the courses
+                          // showing the a available courses
 
                           print_r("<tr><td>$course</td><td><button type ='submit' name='start_course' value='$course'>Start</button></td></tr>");
                       }
