@@ -7,11 +7,35 @@
     <units>
       <unit>
         <title>
-          unit 1: Tags
+          Unit 1: Introduction and Tags
         </title>
         <lesson>
-          <description>We have different tags</description>
-          <description>like p, a, ...</description>
+          <description>HTML stands for Hyper Text Markup Language.
+            It is the standard markup language for creating Web pages
+            HTML describes the structure of a Web page
+            and consists of a series of elements.
+            HTML elements tell the browser how to display the content
+            also its elements label pieces of content such as "this is a heading", "this is a paragraph", "this is a link", etc.</description>
+          <description>p: Allows us to write a paragraph within the tags, just like a description of a certain thing! &lt;p&gt; description &lt;/p&gt;</description>
+          <description>h: We can write our headers in here with the following order from the biggest to the smallest h1, h2, ... , h6. &lt;h2&gt; header &lt;/h2&gt;</description>
+          <description>a: This is a very useful tag that we can use to link to other web pages! we have to use the attribute href inorder to provide the link! &lt;a href="http://facebook.com"&gt; link &lt;/a&gt;</description>
+          <!-- <description>img: With this tag we are able to show any image that we'd like, we only need to provide it with a link to the image with the src attribute. &lt;img src="link"&gt;</description> -->
+
+          <description>nav:
+            Simply defines navigation links and helps us navigate between different pages. &lt;nav&gt; Navigation Links &lt;/nav&gt;
+
+            header:
+            funstions as a header for a document or section of the page. &lt;header&gt; Document Header &lt;/header&gt;
+
+            footer:
+            Basically acts as a footer for a document or section of the page. &lt;footer&gt; Document Footer &lt;/footer&gt;
+
+            section:
+            This is where the general information of the page is usually stored. &lt;section&gt; Document Secotion &lt;/section&gt;
+
+            article:
+            Article is where the more detailed information about the page is stored. &lt;article&gt; Document Article &lt;/article&gt;
+</description>
         </lesson>
         <assignment>
           <description>Create a website using the tags p and a</description>

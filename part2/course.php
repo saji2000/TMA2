@@ -35,14 +35,14 @@
         <h3 class="title">E-University</h3>
         <a href="home.php">Back</a>
 
-        <div class = 'center'> 
+        <div> 
             <?php
 
                 $conn = setup_database();
 
                 $course = $_SESSION['course'];
 
-                print("<h4> Welcome to the $course</h4>");
+                print("<h4 class = 'center'> Welcome to the $course</h4>");
 
                 $course = trim($course);
 
@@ -66,7 +66,7 @@
 
                     $uid = $row['uid'];
 
-                    print_r("<h4>$unit</h4>");
+                    print_r("<h4 class = 'center'>$unit</h4>");
 
                     // fetching the descriptions
                     $query_descripton = "SELECT description FROM descriptions WHERE cid = $cid AND uid = $uid ORDER BY did ASC;";
@@ -76,18 +76,20 @@
                     while($row_descripton = mysqli_fetch_array($result_descripton)) {
 
                         $description = $row_descripton['description'];
+
+                        $description = htmlspecialchars($description, ENT_QUOTES);
     
                         print_r("<p>$description</p>");
 
                     }
                 }
 
-                print_r("<h3>Quiz</h3>");
-
             ?>
         </div>
         <div>
             <?php
+
+                print_r("<h3 class = 'center'>Quiz</h3>");
 
                 $query = "SELECT * FROM quizzes WHERE cid = $cid ORDER BY qid ASC;";
 
@@ -133,7 +135,7 @@
                     $grade = 0;
                     
                     $x = 1;
-                    
+
                     while($row = mysqli_fetch_array($result)) {
 
                         $ans = trim($row['answer']);
