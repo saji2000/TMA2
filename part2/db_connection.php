@@ -9,6 +9,8 @@ function create_db(){
     $username = "root";
     $password = "1234";
 
+    // L?P-$\aPh/K8i)b+
+
     // Create connection
     $conn = new mysqli($servername, $username, $password);
     // Check connection
@@ -59,7 +61,7 @@ function create_tables($conn){
         FOREIGN KEY (cid) REFERENCES courses(cid));
 
         CREATE TABLE quizzes(inquiry TEXT , option_1 TEXT , option_2 TEXT , option_3 TEXT , 
-        option_4 TEXT , answer TEXT, qid int, cid int, FOREIGN KEY (cid) REFERENCES courses(cid));
+        option_4 TEXT , answer TEXT, qid int, cid int, FOREIGN KEY (cid) REFERENCES courses(cid), CONSTRAINT one_question UNIQUE (qid, cid));
         ";
     
     if (mysqli_multi_query($conn, $tables) === TRUE){

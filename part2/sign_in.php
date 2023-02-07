@@ -35,6 +35,7 @@
 
     $conn = setup_database();
 
+
     if(isset($_POST['submit'])){
         
         $email = $_POST['email'];

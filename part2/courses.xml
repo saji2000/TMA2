@@ -48,6 +48,9 @@
         <lesson>
           <description>We have different operations</description>
         </lesson>
+        <assignment>
+          <description>Create a website using the tags p and a</description>
+        </assignment>
       </unit>
       <unit>
         <title>
@@ -57,6 +60,9 @@
           <description>We can use Canvas</description>
           <description>For example, drawing</description>
         </lesson>
+        <assignment>
+          <description>Create a website using the tags p and a</description>
+        </assignment>
       </unit>
     </units>
     <quiz>
@@ -91,6 +97,9 @@
         <lesson>
           <description>use color: blue</description>
         </lesson>
+        <assignment>
+          <description>Create a website using the tags p and a</description>
+        </assignment>
       </unit>
       <unit>
         <title>
@@ -99,6 +108,9 @@
         <lesson>
           <description>align: center</description>
         </lesson>
+        <assignment>
+          <description>Create a website using the tags p and a</description>
+        </assignment>
       </unit>
       <unit>
         <title>
@@ -107,6 +119,9 @@
         <lesson>
           <description>padding: 10px</description>
         </lesson>
+        <assignment>
+          <description>Create a website using the tags p and a</description>
+        </assignment>
       </unit>
     </units>
     <quiz>
