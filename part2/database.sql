@@ -16,11 +16,5 @@ CREATE TABLE quizzes(inquiry TEXT , option_1 TEXT , option_2 TEXT , option_3 TEX
 option_4 TEXT , answer TEXT, qid int, cid int, FOREIGN KEY (cid) REFERENCES courses(cid), CONSTRAINT one_question UNIQUE (qid, cid));
 
 
--- DROP TABLE assignments;
--- DROP TABLE courses;
--- DROP TABLE descriptions;
--- DROP TABLE quizzes;
--- DROP TABLE units;
--- DROP TABLE users;
 
     

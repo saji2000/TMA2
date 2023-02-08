@@ -35,7 +35,7 @@
 
             article:
             Article is where the more detailed information about the page is stored. &lt;article&gt; Document Article &lt;/article&gt;
-</description>
+            </description>
         </lesson>
         <assignment>
           <description>1Create a website using the tags p and a</description>
