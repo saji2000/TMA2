@@ -82,6 +82,23 @@
                         print_r("<p>$description</p>");
 
                     }
+
+                    print_r("<h4 class = 'center'>Assignment</h4>");
+
+                    $query_assignment = "SELECT description FROM assignments WHERE cid = $cid AND uid = $uid ORDER BY did ASC;";
+                    
+                    $result_descripton = mysqli_query($conn, $query_assignment);
+
+                    while($row_descripton = mysqli_fetch_array($result_descripton)) {
+
+                        $description = $row_descripton['description'];
+
+                        $description = htmlspecialchars($description, ENT_QUOTES);
+    
+                        print_r("<p>$description</p>");
+
+                    }
+
                 }
 
             ?>
