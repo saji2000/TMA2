@@ -77,7 +77,13 @@
 
                         $description = $row_descripton['description'];
 
-                        $description = htmlspecialchars($description, ENT_QUOTES);
+                        if($description != htmlspecialchars($description, ENT_QUOTES) && $uid == 2){
+                            $htmlspecial = htmlspecialchars($description, ENT_QUOTES);
+                            print_r("<p>$htmlspecial</p>");
+                        }
+                        else{
+                            $description = htmlspecialchars($description, ENT_QUOTES);
+                        }
     
                         print_r("<p>$description</p>");
 
@@ -124,10 +130,10 @@
 
                     $qid = $row['qid'];
 
-                    $o1 = $row['option_1'];
-                    $o2 = $row['option_2'];
-                    $o3 = $row['option_3'];
-                    $o4 = $row['option_4'];
+                    $o1 = htmlspecialchars($row['option_1']);
+                    $o2 = htmlspecialchars($row['option_2']);
+                    $o3 = htmlspecialchars($row['option_3']);
+                    $o4 = htmlspecialchars($row['option_4']);
 
                     print_r("<p>Q$qid: $question?</p>");
 
@@ -140,7 +146,7 @@
 
                 print_r("<br><button type ='submit' name='finish_quiz'>Finish Quiz</button>");
 
-                print_r("</form><br><br>");
+                print_r("</form><br>");
 
                 // grading the quiz
                 if(isset($_POST['finish_quiz'])){

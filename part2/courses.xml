@@ -21,6 +21,7 @@
           <description>a: This is a very useful tag that we can use to link to other web pages! we have to use the attribute href inorder to provide the link! &lt;a href="http://facebook.com"&gt; link &lt;/a&gt;</description>
           <!-- <description>img: With this tag we are able to show any image that we'd like, we only need to provide it with a link to the image with the src attribute. &lt;img src="link"&gt;</description> -->
 
+          <description>Semantic Elements:</description>
           <description>nav:
             Simply defines navigation links and helps us navigate between different pages. &lt;nav&gt; Navigation Links &lt;/nav&gt;
 
@@ -38,30 +39,65 @@
             </description>
         </lesson>
         <assignment>
-          <description>1Create a website using the tags p and a</description>
+          <description>Create a website containing headers, paragraphs, and a link describing planet earth!</description>
         </assignment>
       </unit>
       <unit>
         <title>
-          unit 2: Operations
+          unit 2: Inputs
         </title>
         <lesson>
-          <description>We have different operations</description>
+          <description>We use inputs simply to take information from the user in order to process it. 
+            There are different ways to collect information/input in html such as:</description>
+            <description>Input Type Text:</description>
+            <description>Takes the text from the user through the input form</description>
+            <description>&lt;form&gt;
+                &lt;label&gt;Name:&lt;/label&gt;&lt;br&gt;
+                &lt;input type="text"&gt;&lt;br&gt;
+            &lt;/form&gt;</description>
+            <description>Input Type Password:</description>
+            <description>Takes the password from the user through the input form and hides it</description>
+
+            <description>&lt;form&gt;
+                &lt;label&gt;Password:&lt;/label&gt;&lt;br&gt;
+                &lt;input type="password"&gt;&lt;br&gt;
+            &lt;/form&gt;</description>
+
+            <description>Input Type Submit:</description>
+            <description>A submit button which would be configured to trigger a submission of the form</description>
+
+            <description>&lt;form&gt;
+                &lt;input type="submit" value="Submit"&gt;&lt;br&gt;
+            &lt;/form&gt;</description>
+
+            <description>Input Type Radio:</description>
+            <description>You can only choose one of the radio buttons</description>
+
+            <description>&lt;form&gt;
+                &lt;label&gt;Choose your favorite unit:&lt;/label&gt;&lt;br&gt;
+                &lt;input type="radio" value="unit1"&gt;
+                &lt;label&gt;Unit 1 (HTML and CSS)&lt;/label&gt;&lt;br&gt;
+                &lt;input type="radio" value="unit2"&gt;
+                &lt;label&gt;Unit 2 (JavaScript)&lt;/label&gt;&lt;br&gt;
+                &lt;input type="radio" value="unit3"&gt;
+                &lt;label&gt;Unit 3 (XML and Ajax)&lt;/label&gt;&lt;br&gt;
+            &lt;/form&gt;</description>
+
+            <description>Input Type Checkbox:</description>
+            <description>You can choose zero or more of the boxes</description>
+
+            <description>&lt;form&gt;
+                &lt;label&gt;Choose your favorite unit:&lt;/label&gt;&lt;br&gt;
+                &lt;input type="checkbox" value="unit1"&gt;
+                &lt;label&gt;Unit 1 (HTML and CSS)&lt;/label&gt;&lt;br&gt;
+                &lt;input type="checkbox" value="unit2"&gt;
+                &lt;label&gt;Unit 2 (JavaScript)&lt;/label&gt;&lt;br&gt;
+                &lt;input type="checkbox" value="unit3"&gt;
+                &lt;label&gt;Unit 3 (XML and Ajax)&lt;/label&gt;&lt;br&gt;
+            &lt;/form&gt;</description>
         </lesson>
         <assignment>
-          <description>2Create a website using the tags p and a</description>
-        </assignment>
-      </unit>
-      <unit>
-        <title>
-          unit 3: Canvas
-        </title>
-        <lesson>
-          <description>We can use Canvas</description>
-          <description>For example, drawing</description>
-        </lesson>
-        <assignment>
-          <description>3Create a website using the tags p and a</description>
+          <description>Create a registration page that asks for name, email, phone number, password with a checkbox in addition to a submit button!</description>
         </assignment>
       </unit>
     </units>
@@ -70,17 +106,41 @@
         <inquiry>What tag is not correct</inquiry>
         <option>p</option>
         <option>a</option>
-        <option>bold</option>
+        <option>h</option>
         <option>o</option>
         <answer>o</answer>
       </question>
       <question>
-        <inquiry>What operation is not correct</inquiry>
-        <option>+</option>
-        <option>-</option>
-        <option>$</option>
-        <option>*</option>
-        <answer>$</answer>
+        <inquiry>Which one is a correct way to declare a checkbox input type?</inquiry>
+        <option>&lt;input type="checkbox" value="unit"&gt;</option>
+        <option>&lt;input model="checkbox" value="unit"&gt;</option>
+        <option>&lt;input id="checkbox" value="unit"&gt;</option>
+        <option>&lt;input value="checkbox" type="unit"&gt;</option>
+        <answer>&lt;input type="checkbox" value="unit"&gt;</answer>
+      </question>
+      <question>
+        <inquiry>Which one is not a semantic element?</inquiry>
+        <option>nav</option>
+        <option>article</option>
+        <option>color</option>
+        <option>section</option>
+        <answer>color</answer>
+      </question>
+      <question>
+        <inquiry>What is the difference between checkbox and radio input?</inquiry>
+        <option>you can select more than one option in radio but not in checkbox</option>
+        <option>you can select more than one option in checkbox but not in radio</option>
+        <option>checkbox is only for more than 2 options whereas radio is for 2 options only</option>
+        <option>radio has a faster response time in comparison to checkbox input</option>
+        <answer>you can select more than one option in checkbox but not in radio</answer>
+      </question>
+      <question>
+        <inquiry>What does HTML stand for?</inquiry>
+        <option>High Text Markup Long</option>
+        <option>Hyper Text Markup Language</option>
+        <option>Hyper Text Markup Long</option>
+        <option>Hyper Tired Marking Language</option>
+        <answer>Hyper Text Markup Language</answer>
       </question>
     </quiz>
   </course>
