@@ -165,7 +165,12 @@
 
                         $ans = trim($row['answer']);
 
-                        $selected = $_POST["$x"];
+                        if(isset($_POST["$x"])){
+                            $selected = $_POST["$x"];
+                        }
+                        else{
+                            $selected = null;
+                        }
 
                         if($selected == $ans){
                             $grade++;
