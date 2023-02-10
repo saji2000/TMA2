@@ -260,4 +260,144 @@
       </question>
     </quiz>
   </course>
+
+  <course>
+    <title>
+      Javascript tutorial
+    </title>
+    <units>
+      <unit>
+        <title>
+          Unit 1: Introduction and basics
+        </title>
+        <lesson>
+          <description>often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, 
+            alongside HTML and CSS. As of 2022, 98% of websites use JavaScript on the client side for webpage behavior, 
+            often incorporating third-party libraries. All major web browsers have a dedicated JavaScript engine to execute the code on users' devices.</description>
+        
+        <description>Variables</description>
+        <description>Different Variable Declarations:</description>
+        <description>var: variable</description>
+        <description>let: variable which the type cannot change</description>
+        <description>cont: contant type</description>
+        <description>You can declare a variable by simply writing the following: var a = 1; By doing this we are assinging the value 1 to variable a.</description>
+        <description>Any type of data can be assigned using this method including strings. For example, var s = "Hello World!";</description>
+        
+
+        <description>Operators</description>
+        <description>Different Operators:</description>
+        <description>+: addition</description>
+        <description>-: subtraction</description>
+        <description>*: multiplication</description>
+        <description>/: division</description>
+        <description>Example var a = 1; var b = -1; var c = a + b;</description>
+        <description>In this simple arithmetic operation we get that c = 0!</description>
+
+        <description>Arrays</description>
+        <description>We can have a list of variables by using arrays. For example, we can have a list of colors:</description>
+        <description>const colors = ["red", "green", "blue", "purple"]</description>
+        </lesson>
+        <assignment>
+          <description>Declare an Array and set the first value as an integer of value 2, then add the first value in the array to the number 5 and output the result</description>
+        </assignment>
+      </unit>
+      <unit>
+        <title>
+          Unit 2: Advanced Operations (For loop, functions, objects and etc.)
+        </title>
+        <lesson>
+          <description>If Else Statements</description>
+          <description>Imagine a simple case which you want your program to work differently based on different conditions, we do this using if else statements</description>
+          <description>For example, if a > 0 I want to assing the value 1 to b otherwise 0</description>
+          <description>We write the following code:  if(a > 0) { b = 1 } else { b = 0 }</description>
+
+          <description>For Loops</description>
+          <description>When we want to iterate over a sequence and perform a certain action, we use for loops. For example, if I want to write "Hello World!" 5 times to the console, we do the following:</description>
+          <description>for(var i = 0; i &lt; 5; i++){ console.log("Hello World!") }</description>
+
+          <description>Functions</description>
+          <description>Functions basically can take an input and perform an action. For example, if I want to add 1 to the input:</description>
+          <description>function add_one(n){ return n + 1; } add_one(1), this statement would return the value 2 to us!</description>
+
+          <description>Objects</description>
+          <description>We can define an object and give it many properties. For example, a car that has a certain color, speed, price.</description>
+          <description>const car = {speed:"150", price:"50,000$", color:"white"};</description>
+          <description>We can access these properties by simply writing this: car.price!</description>
+
+          <description>changing html elements</description>
+          <description>We are able to manipulate the HTML elements using their id attribute and using the innerHTML property. For example, we can change the paragraph element with id="hello"</description>
+          <description>document.getElementById("hello").innerHTML = "Hello, world!"</description>
+          <description>Now we are changing whatever was in that paragraph with "Hello, world!"</description>
+        </lesson>
+        <assignment>
+          <description>Create a function and declare an object within it with a random number, then using a for loop increment that number 4 times and if that number is even change the value of
+            the element with id="result" to even, otherwise odd!
+          </description>
+        </assignment>
+      </unit>
+      <unit>
+        <title>
+          Unit 3: Selectors
+        </title>
+        <lesson>
+          <description>Selectors:</description>
+          <description>If you take a look at the previous example it might confuse you as why css text for both cases of 
+              alignment is actually the same! We use "selectors" to distinguish between these elements!
+          </description>
+          <description>For example, to apply an attribute to all the paragraphs we do the following: p {color: blue} Now all the paragraphs will be shown in blue text if we apply this</description>
+          <description>To distinguish between different elements of the same type we can use <b>classes</b> or <b>ids</b></description>
+          <description>To assign a class "blue" to a certain paragraph we do the following: &lt;p class="blue"&gt;Paragraph&lt;/p&gt;</description>
+          <description>Now in css only add a "." before the class name to apply a certain style only specific to any element with class "blue"</description>
+          <description>css text: .blue {color: blue}</description>
+          <description>It is almost the exact same way with ids, only the way to declare them is a bit different.</description>
+          <description>In css we just add "#" before the id name, and then simply write our css text in the same manner.</description>
+        </lesson>
+        <assignment>
+          <description>Add a class to a paragraph and then in CSS apply the color red and font Arial to it</description>
+        </assignment>
+      </unit>
+    </units>
+    <quiz>
+      <question>
+        <inquiry>What does CSS stand for?</inquiry>
+        <option>Cascading Style Sheets</option>
+        <option>Classic Style Sheets</option>
+        <option>Custom Style Sheets</option>
+        <option>Cascading Style Shape</option>
+        <answer>Cascading Style Sheets</answer>
+      </question>
+      <question>
+        <inquiry>What is the purpose of CSS?</inquiry>
+        <option>Handle the back-end of the application</option>
+        <option>Deals with the database of the application</option>
+        <option>Styling of the front-end of the application</option>
+        <option>Business logic side of the application</option>
+        <answer>Styling of the front-end of the application</answer>
+      </question>
+      <question>
+        <inquiry>Which attribute is used for changing the color of text?</inquiry>
+        <option>text-color</option>
+        <option>color-text</option>
+        <option>color</option>
+        <option>colour</option>
+        <answer>color</answer>
+      </question>
+      <question>
+        <inquiry>How can we change the style of a certain class in CSS?</inquiry>
+        <option>using "." before the class name</option>
+        <option>using "#" before the class name</option>
+        <option>using "*" before the class name</option>
+        <option>using "$" before the class name</option>
+        <answer>using "." before the class name</answer>
+      </question>
+      <question>
+        <inquiry>How can we align a paragraph to the left?</inquiry>
+        <option>p {align: left}</option>
+        <option>p {align-side: left}</option>
+        <option>p {align: L}</option>
+        <option>p {align-text: left}</option>
+        <answer>p {align-text: left}</answer>
+      </question>
+    </quiz>
+  </course>
 </university>
