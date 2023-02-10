@@ -35,7 +35,7 @@
         <h3 class="title">E-University</h3>
         <a href="home.php">Back</a>
 
-        <div> 
+        <div class="course"> 
             <?php
 
                 $conn = setup_database();
@@ -77,6 +77,7 @@
 
                         $description = $row_descripton['description'];
 
+                        // dealing with special characters
                         if($description != htmlspecialchars($description, ENT_QUOTES) && $uid == 2){
                             $htmlspecial = htmlspecialchars($description, ENT_QUOTES);
                             print_r("<p>$htmlspecial</p>");
@@ -109,7 +110,8 @@
 
             ?>
         </div>
-        <div>
+        <br>
+        <div class = "quiz">
             <?php
 
                 print_r("<h3 class = 'center'>Quiz</h3>");

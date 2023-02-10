@@ -75,11 +75,11 @@
 
             <description>&lt;form&gt;
                 &lt;label&gt;Choose your favorite unit:&lt;/label&gt;&lt;br&gt;
-                &lt;input type="radio" value="unit1"&gt;
+                &lt;input type="radio" value="unit1" name="fav_unit"&gt;
                 &lt;label&gt;Unit 1 (HTML and CSS)&lt;/label&gt;&lt;br&gt;
-                &lt;input type="radio" value="unit2"&gt;
+                &lt;input type="radio" value="unit2" name="fav_unit"&gt;
                 &lt;label&gt;Unit 2 (JavaScript)&lt;/label&gt;&lt;br&gt;
-                &lt;input type="radio" value="unit3"&gt;
+                &lt;input type="radio" value="unit3" name="fav_unit"&gt;
                 &lt;label&gt;Unit 3 (XML and Ajax)&lt;/label&gt;&lt;br&gt;
             &lt;/form&gt;</description>
 
