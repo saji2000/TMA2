@@ -116,6 +116,8 @@ function populate_tables($conn){
 
         // parsing the quizzes
         $qid = 0;
+        echo "cid for Quiz: $cid ";
+
         foreach($course->quiz->children() as $question){
 
             ++$qid;

@@ -78,7 +78,7 @@
                         $description = $row_descripton['description'];
 
                         // dealing with special characters
-                        if($description != htmlspecialchars($description, ENT_QUOTES) && $uid == 2){
+                        if($description != htmlspecialchars($description, ENT_QUOTES) && $uid == 2 && $cid == 1){
                             $htmlspecial = htmlspecialchars($description, ENT_QUOTES);
                             print_r("<p>$htmlspecial</p>");
                         }

@@ -152,54 +152,111 @@
     <units>
       <unit>
         <title>
-          unit 1: colors
+          Unit 1: Introduction and colors
         </title>
         <lesson>
-          <description>use color: blue</description>
+            <description>CSS stands for Cascading Style Sheets
+                and describes how HTML elements are to be displayed on screen, paper, or in other media.
+                CSS saves a lot of work. It can control the layout of multiple web pages all at once
+                External stylesheets are stored in CSS files</description>
+
+            <description>Text Color:</description>
+            <description>"color" attribute specifies the color of text</description>
+            <description>css text: color: blue;</description>
+            <description>Background Color:</description>
+            <description>"background-color" attribute specifies the background color of text</description>
+            <description>css text: background-color: grey;</description>
+            <description>Border Color:</description>
+            <description>"border-color" attribute specifies the border color of text, note that we must also include the border size</description>
+            <description>css text: border: 2px solid red;</description>
         </lesson>
         <assignment>
-          <description>4Create a website using the tags p and a</description>
+          <description>Create a website with a blue paragraph, yellow background and a black border.</description>
         </assignment>
       </unit>
       <unit>
         <title>
-          unit 2: align
+          Unit 2: Text/Font manipulation
         </title>
         <lesson>
-          <description>align: center</description>
+          <description>Text Font Family:</description>
+            <description>"font-family" attribute specifies the family of the font</description>
+            <description>css text: font-family: "Times New Roman", Times, serif;</description>
+            <description>Text Font Size:</description>
+            <description>"font-size" attribute specifies the size of the font</description>
+            <description>css text: font-family: "Times New Roman", Times, serif;
+                font-size: 24px;</description>
+            <description>Text Alignment:</description>
+            <description>"text-align" attribute specifies the alignment of the text, default text is aligned to the left</description>
+            <description>css text: text-align: right;</description>
+            <description>css text: text-align: center;</description>
         </lesson>
         <assignment>
-          <description>5Create a website using the tags p and a</description>
+          <description>In the website you previously created, apply the Arial font with the size 14 and align it in the center of the web page</description>
         </assignment>
       </unit>
       <unit>
         <title>
-          unit 3: padding
+          Unit 3: Selectors
         </title>
         <lesson>
-          <description>padding: 10px</description>
+          <description>Selectors:</description>
+          <description>If you take a look at the previous example it might confuse you as why css text for both cases of 
+              alignment is actually the same! We use "selectors" to distinguish between these elements!
+          </description>
+          <description>For example, to apply an attribute to all the paragraphs we do the following: p {color: blue} Now all the paragraphs will be shown in blue text if we apply this</description>
+          <description>To distinguish between different elements of the same type we can use <b>classes</b> or <b>ids</b></description>
+          <description>To assign a class "blue" to a certain paragraph we do the following: &lt;p class="blue"&gt;Paragraph&lt;/p&gt;</description>
+          <description>Now in css only add a "." before the class name to apply a certain style only specific to any element with class "blue"</description>
+          <description>css text: .blue {color: blue}</description>
+          <description>It is almost the exact same way with ids, only the way to declare them is a bit different.</description>
+          <description>In css we just add "#" before the id name, and then simply write our css text in the same manner.</description>
         </lesson>
         <assignment>
-          <description>6Create a website using the tags p and a</description>
+          <description>Add a class to a paragraph and then in CSS apply the color red and font Arial to it</description>
         </assignment>
       </unit>
     </units>
     <quiz>
       <question>
-        <inquiry>What tag is not correct</inquiry>
-        <option>p</option>
-        <option>a</option>
-        <option>bold</option>
-        <option>o</option>
-        <answer>o</answer>
+        <inquiry>What does CSS stand for?</inquiry>
+        <option>Cascading Style Sheets</option>
+        <option>Classic Style Sheets</option>
+        <option>Custom Style Sheets</option>
+        <option>Cascading Style Shape</option>
+        <answer>Cascading Style Sheets</answer>
       </question>
       <question>
-        <inquiry>What operation is not correct</inquiry>
-        <option>+</option>
-        <option>-</option>
-        <option>$</option>
-        <option>*</option>
-        <answer>$</answer>
+        <inquiry>What is the purpose of CSS?</inquiry>
+        <option>Handle the back-end of the application</option>
+        <option>Deals with the database of the application</option>
+        <option>Styling of the front-end of the application</option>
+        <option>Business logic side of the application</option>
+        <answer>Styling of the front-end of the application</answer>
+      </question>
+      <question>
+        <inquiry>Which attribute is used for changing the color of text?</inquiry>
+        <option>text-color</option>
+        <option>color-text</option>
+        <option>color</option>
+        <option>colour</option>
+        <answer>color</answer>
+      </question>
+      <question>
+        <inquiry>How can we change the style of a certain class in CSS?</inquiry>
+        <option>using "." before the class name</option>
+        <option>using "#" before the class name</option>
+        <option>using "*" before the class name</option>
+        <option>using "$" before the class name</option>
+        <answer>using "." before the class name</answer>
+      </question>
+      <question>
+        <inquiry>How can we align a paragraph to the left?</inquiry>
+        <option>p {align: left}</option>
+        <option>p {align-side: left}</option>
+        <option>p {align: L}</option>
+        <option>p {align-text: left}</option>
+        <answer>p {align-text: left}</answer>
       </question>
     </quiz>
   </course>

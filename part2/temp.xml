@@ -1,0 +1,40 @@
+<question>
+    <inquiry>What does CSS stand for?</inquiry>
+    <option>Cascading Style Sheets</option>
+    <option>Classic Style Sheets</option>
+    <option>Custom Style Sheets</option>
+    <option>Cascading Style Shape</option>
+    <answer>Cascading Style Sheets</answer>
+  </question>
+  <question>
+    <inquiry>What is the purpose of CSS?</inquiry>
+    <option>Handle the back-end of the application</option>
+    <option>Deals with the database of the application</option>
+    <option>Styling of the front-end of the application</option>
+    <option>Business logic side of the application</option>
+    <answer>Styling of the front-end of the application</answer>
+  </question>
+  <question>
+    <inquiry>Which attribute is used for changing the color of text?</inquiry>
+    <option>text-color</option>
+    <option>color-text</option>
+    <option>color</option>
+    <option>colour</option>
+    <answer>color</answer>
+  </question>
+  <question>
+    <inquiry>How can we change the style of a certain class in CSS?</inquiry>
+    <option>using "." before the class name</option>
+    <option>using "#" before the class name</option>
+    <option>using "*" before the class name</option>
+    <option>using "$" before the class name</option>
+    <answer>using "." before the class name</answer>
+  </question>
+  <question>
+    <inquiry>How can we align a paragraph to the left?</inquiry>
+    <option>p {align: left}</option>
+    <option>p {align-side: left}</option>
+    <option>p {align: L}</option>
+    <option>p {align-text: left}</option>
+    <answer>p {align-text: left}</answer>
+  </question>
