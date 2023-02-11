@@ -452,44 +452,44 @@
     </units>
     <quiz>
       <question>
-        <inquiry>Roughly how many percent of websites use JavaScript?</inquiry>
-        <option>38%</option>
-        <option>49%</option>
-        <option>82%</option>
-        <option>98%</option>
-        <answer>98%</answer>
+        <inquiry>What does XML stand for?</inquiry>
+        <option>Extensible Markup Language</option>
+        <option>Excess Markup Language</option>
+        <option>Extensible Machine Language</option>
+        <option>Extensible Machine Line</option>
+        <answer>Extensible Markup Language</answer>
       </question>
       <question>
-        <inquiry>Which one is not a way to declare a variable?</inquiry>
-        <option>var</option>
-        <option>int</option>
-        <option>const</option>
-        <option>let</option>
-        <answer>int</answer>
+        <inquiry>Most important reason for using XML instead of HTML?</inquiry>
+        <option>Lower level language and faster compile time</option>
+        <option>Simpler language syntax</option>
+        <option>Reusability of the code</option>
+        <option>More established in the industry</option>
+        <answer>Reusability of the code</answer>
       </question>
       <question>
-        <inquiry>Which one is the operator for multiplication?</inquiry>
-        <option>&amp;</option>
-        <option>#</option>
-        <option>*</option>
-        <option>x</option>
-        <answer>*</answer>
+        <inquiry>Best way to apply styling to XML elements?</inquiry>
+        <option>XSD</option>
+        <option>XSL</option>
+        <option>In-line styling</option>
+        <option>Javascript</option>
+        <answer>XSL</answer>
       </question>
       <question>
-        <inquiry>Which for loop is correct?</inquiry>
-        <option>for(int i = 0; i &lt; n; i++){...}</option>
-        <option>while(int i = 0; i &lt; n; i++){...}</option>
-        <option>for(int i == 0; i &lt; n; i++){...}</option>
-        <option>for(int i = 0, i &lt; n, i++){...}</option>
-        <answer>for(int i = 0; i &lt; n; i++){...}</answer>
+        <inquiry>What is Ajax?</inquiry>
+        <option>Ajax  is a set of web development techniques that uses various web technologies on the client-side to create asynchronous web applications.</option>
+        <option>Ajax  is a set of frameworks that uses various web technologies on the client-side to create asynchronous web applications.</option>
+        <option>Ajax  is a set of development techniques that uses various web technologies on the server-side to create synchronous mobile applications.</option>
+        <option>Ajax  is a set of programming languages that uses various web technologies on the client-side to create asynchronous web applications.</option>
+        <answer>Ajax  is a set of web development techniques that uses various web technologies on the client-side to create asynchronous web applications.</answer>
       </question>
       <question>
-        <inquiry>Which one is the correct way to declare an array called "a" with element 1 and 2?</inquiry>
-        <option>array a = [1, 2]</option>
-        <option>let a = [1, 2]</option>
-        <option>var a = [1, 2]</option>
-        <option>const a = [1, 2]</option>
-        <answer>const a = [1, 2]</answer>
+        <inquiry>What is Https Request?</inquiry>
+        <option>XMLHttpRequest is used to request data from a web server</option>
+        <option>Https request helps with connecting to another file locally</option>
+        <option>Https request is a function that creates a buffer between files</option>
+        <option>XMLHttpsRequest creates a XML request for a css style file</option>
+        <answer>XMLHttpRequest is used to request data from a web server</answer>
       </question>
     </quiz>
   </course>
