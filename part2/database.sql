@@ -14,7 +14,3 @@ FOREIGN KEY (cid) REFERENCES courses(cid));
 
 CREATE TABLE quizzes(inquiry TEXT , option_1 TEXT , option_2 TEXT , option_3 TEXT , 
 option_4 TEXT , answer TEXT, qid int, cid int, FOREIGN KEY (cid) REFERENCES courses(cid), CONSTRAINT one_question UNIQUE (qid, cid));
-
-
-
-    

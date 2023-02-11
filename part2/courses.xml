@@ -271,31 +271,31 @@
           Unit 1: Introduction and basics
         </title>
         <lesson>
-          <description>often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, 
-            alongside HTML and CSS. As of 2022, 98% of websites use JavaScript on the client side for webpage behavior, 
-            often incorporating third-party libraries. All major web browsers have a dedicated JavaScript engine to execute the code on users' devices.</description>
-        
-        <description>Variables</description>
-        <description>Different Variable Declarations:</description>
-        <description>var: variable</description>
-        <description>let: variable which the type cannot change</description>
-        <description>cont: contant type</description>
-        <description>You can declare a variable by simply writing the following: var a = 1; By doing this we are assinging the value 1 to variable a.</description>
-        <description>Any type of data can be assigned using this method including strings. For example, var s = "Hello World!";</description>
-        
+          <description>
+            often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. As of 2022, 98% of websites use JavaScript on the client side for webpage behavior, often incorporating third-party libraries.
+          </description>
+          
+          <description>Variables</description>
+          <description>Different Variable Declarations:</description>
+          <description>var: variable</description>
+          <description>let: variable which the type cannot change</description>
+          <description>cont: contant type</description>
+          <description>You can declare a variable by simply writing the following: var a = 1; By doing this we are assinging the value 1 to variable a.</description>
+          <description>Any type of data can be assigned using this method including strings. For example, var s = "Hello World!";</description>
+          
 
-        <description>Operators</description>
-        <description>Different Operators:</description>
-        <description>+: addition</description>
-        <description>-: subtraction</description>
-        <description>*: multiplication</description>
-        <description>/: division</description>
-        <description>Example var a = 1; var b = -1; var c = a + b;</description>
-        <description>In this simple arithmetic operation we get that c = 0!</description>
+          <description>Operators</description>
+          <description>Different Operators:</description>
+          <description>+: addition</description>
+          <description>-: subtraction</description>
+          <description>*: multiplication</description>
+          <description>/: division</description>
+          <description>Example var a = 1; var b = -1; var c = a + b;</description>
+          <description>In this simple arithmetic operation we get that c = 0!</description>
 
-        <description>Arrays</description>
-        <description>We can have a list of variables by using arrays. For example, we can have a list of colors:</description>
-        <description>const colors = ["red", "green", "blue", "purple"]</description>
+          <description>Arrays</description>
+          <description>We can have a list of variables by using arrays. For example, we can have a list of colors:</description>
+          <description>const colors = ["red", "green", "blue", "purple"]</description>
         </lesson>
         <assignment>
           <description>Declare an Array and set the first value as an integer of value 2, then add the first value in the array to the number 5 and output the result</description>
@@ -338,44 +338,158 @@
     </units>
     <quiz>
       <question>
-        <inquiry>What does CSS stand for?</inquiry>
-        <option>Cascading Style Sheets</option>
-        <option>Classic Style Sheets</option>
-        <option>Custom Style Sheets</option>
-        <option>Cascading Style Shape</option>
-        <answer>Cascading Style Sheets</answer>
+        <inquiry>Roughly how many percent of websites use JavaScript?</inquiry>
+        <option>38%</option>
+        <option>49%</option>
+        <option>82%</option>
+        <option>98%</option>
+        <answer>98%</answer>
       </question>
       <question>
-        <inquiry>What is the purpose of CSS?</inquiry>
-        <option>Handle the back-end of the application</option>
-        <option>Deals with the database of the application</option>
-        <option>Styling of the front-end of the application</option>
-        <option>Business logic side of the application</option>
-        <answer>Styling of the front-end of the application</answer>
+        <inquiry>Which one is not a way to declare a variable?</inquiry>
+        <option>var</option>
+        <option>int</option>
+        <option>const</option>
+        <option>let</option>
+        <answer>int</answer>
       </question>
       <question>
-        <inquiry>Which attribute is used for changing the color of text?</inquiry>
-        <option>text-color</option>
-        <option>color-text</option>
-        <option>color</option>
-        <option>colour</option>
-        <answer>color</answer>
+        <inquiry>Which one is the operator for multiplication?</inquiry>
+        <option>&amp;</option>
+        <option>#</option>
+        <option>*</option>
+        <option>x</option>
+        <answer>*</answer>
       </question>
       <question>
-        <inquiry>How can we change the style of a certain class in CSS?</inquiry>
-        <option>using "." before the class name</option>
-        <option>using "#" before the class name</option>
-        <option>using "*" before the class name</option>
-        <option>using "$" before the class name</option>
-        <answer>using "." before the class name</answer>
+        <inquiry>Which for loop is correct?</inquiry>
+        <option>for(int i = 0; i &lt; n; i++){...}</option>
+        <option>while(int i = 0; i &lt; n; i++){...}</option>
+        <option>for(int i == 0; i &lt; n; i++){...}</option>
+        <option>for(int i = 0, i &lt; n, i++){...}</option>
+        <answer>for(int i = 0; i &lt; n; i++){...}</answer>
       </question>
       <question>
-        <inquiry>How can we align a paragraph to the left?</inquiry>
-        <option>p {align: left}</option>
-        <option>p {align-side: left}</option>
-        <option>p {align: L}</option>
-        <option>p {align-text: left}</option>
-        <answer>p {align-text: left}</answer>
+        <inquiry>Which one is the correct way to declare an array called "a" with element 1 and 2?</inquiry>
+        <option>array a = [1, 2]</option>
+        <option>let a = [1, 2]</option>
+        <option>var a = [1, 2]</option>
+        <option>const a = [1, 2]</option>
+        <answer>const a = [1, 2]</answer>
+      </question>
+    </quiz>
+  </course>
+
+  <course>
+    <title>
+      XML and Ajax tutorial
+    </title>
+    <units>
+      <unit>
+        <title>
+          Unit 1: XML
+        </title>
+        <lesson>
+          <description>Extensible Markup Language (XML) is a markup language and file format for storing, transmitting, and reconstructing arbitrary data. 
+            It defines a set of rules for encoding documents in a format that is both human-readable and machine-readable.</description>
+      
+
+          <description>Most important aspect of using XML is that it is reusable, compared to HTML it saves a lot of time while developing a web page</description>
+          
+
+          <description>XML Elements</description>
+          <description>Different Elements:</description>
+          <description>text</description>
+          <description>attributes</description>
+          <description>other attributes</description>
+          <description>mix of all</description>
+
+          <description>XSD</description>
+          <description>XSD (XML Schema Definition), a recommendation of the World Wide Web Consortium (W3C), specifies how to formally describe the elements in an Extensible Markup Language (XML) document. 
+              It can be used by programmers to verify each piece of item content in a document, to assure it adheres to the description of the element it is placed in.</description>
+          
+
+          <description>XSL</description>
+          <description>XSLT (Extensible Stylesheet Language Transformations) is the recommended style sheet language for XML.
+              XSLT is far more sophisticated than CSS. With XSLT you can add/remove elements and attributes to or from the output file. You can also rearrange and sort elements, perform tests and make decisions about which elements to hide and display, and a lot more.
+              XSLT uses XPath to find information in an XML document.</description>
+        </lesson>
+        <assignment>
+          <description>Declare an Array and set the first value as an integer of value 2, then add the first value in the array to the number 5 and output the</description>
+        </assignment>
+      </unit>
+      <unit>
+        <title>
+          Unit 2: XML
+        </title>
+        <lesson>
+          <description>Ajax  is a set of web development techniques that uses various web technologies on the client-side to create asynchronous web applications. With Ajax, web applications can send and retrieve data from a server asynchronously 
+            (in the background) without interfering with the display and behaviour of the existing page. By decoupling the data interchange layer from the presentation layer, Ajax allows web pages and, by extension, web applications, 
+            to change content dynamically without the need to reload the entire page.</description>
+        
+          <description>Https Request</description>
+          <description>The XMLHttpRequest object can be used to request data from a web server. It's very useful since you
+              Update a web page without reloading the page.</description>
+
+          <description>new XMLHttpRequest(): Creates a new XMLHttpRequest object</description>
+          <description>abort(): Cancels the current request</description>
+          <description>getAllResponseHeaders(): Returns header information</description>
+          <description>getResponseHeader(): Returns specific header information</description>
+          <description>open(method,url,async,user,psw): Specifies the request
+              method: the request type GET or POST
+              url: the file location
+              async: true (asynchronous) or false (synchronous)
+              user: optional user name
+              psw: optional password</description>
+          <description>send(): Sends the request to the server, used for GET requests</description>
+          <description>send(string): Sends the request to the server, used for POST requests</description>
+          <description>setRequestHeader(): Adds a label/value pair to the header to be sent</description>
+        </lesson>
+        <assignment>
+          <description>Create a function and declare an object within it with a random number, then using a for loop increment that number 4 times and if that number is even change the value of the element with id = "result" to even, otherwise odd!</description>
+        </assignment>
+      </unit>
+    </units>
+    <quiz>
+      <question>
+        <inquiry>Roughly how many percent of websites use JavaScript?</inquiry>
+        <option>38%</option>
+        <option>49%</option>
+        <option>82%</option>
+        <option>98%</option>
+        <answer>98%</answer>
+      </question>
+      <question>
+        <inquiry>Which one is not a way to declare a variable?</inquiry>
+        <option>var</option>
+        <option>int</option>
+        <option>const</option>
+        <option>let</option>
+        <answer>int</answer>
+      </question>
+      <question>
+        <inquiry>Which one is the operator for multiplication?</inquiry>
+        <option>&amp;</option>
+        <option>#</option>
+        <option>*</option>
+        <option>x</option>
+        <answer>*</answer>
+      </question>
+      <question>
+        <inquiry>Which for loop is correct?</inquiry>
+        <option>for(int i = 0; i &lt; n; i++){...}</option>
+        <option>while(int i = 0; i &lt; n; i++){...}</option>
+        <option>for(int i == 0; i &lt; n; i++){...}</option>
+        <option>for(int i = 0, i &lt; n, i++){...}</option>
+        <answer>for(int i = 0; i &lt; n; i++){...}</answer>
+      </question>
+      <question>
+        <inquiry>Which one is the correct way to declare an array called "a" with element 1 and 2?</inquiry>
+        <option>array a = [1, 2]</option>
+        <option>let a = [1, 2]</option>
+        <option>var a = [1, 2]</option>
+        <option>const a = [1, 2]</option>
+        <answer>const a = [1, 2]</answer>
       </question>
     </quiz>
   </course>
