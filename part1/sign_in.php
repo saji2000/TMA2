@@ -40,7 +40,7 @@
         $email = $_POST['email'];
         $pass = $_POST['pass'];
 
-        $query = "SELECT * FROM users WHERE email = '$email' AND password = '$pass';";
+        $query = "SELECT * FROM users_b WHERE email = '$email' AND password = '$pass';";
 
         $result = mysqli_query($conn, $query);
 

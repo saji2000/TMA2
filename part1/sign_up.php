@@ -45,7 +45,7 @@
 
         $id = rand(1, 10000);
 
-        $query = "SELECT * FROM users WHERE email = '$email';";
+        $query = "SELECT * FROM users_b WHERE email = '$email';";
 
         $result = mysqli_query($conn, $query);
 
@@ -58,13 +58,13 @@
 
         // create the account
         else{
-            $query = "INSERT INTO users(id, name, email, password) VALUES($id, '$name', '$email', '$pass');";
+            $query = "INSERT INTO users_b(id, name, email, password) VALUES($id, '$name', '$email', '$pass');";
 
             // if id has already been used
             while(mysqli_query($conn, $query)==false){
                 $id = rand(1, 10000);
 
-                $query = "INSERT INTO users VALUES($id, '$name', '$email', '$pass');";
+                $query = "INSERT INTO users_b VALUES($id, '$name', '$email', '$pass');";
             }
 
             // taking the user to the home page

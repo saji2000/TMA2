@@ -17,7 +17,7 @@ function create_db(){
     } 
 
     // Create database
-    $sql = "CREATE DATABASE part1;";
+    $sql = "CREATE DATABASE part2;";
 
     mysqli_query($conn, $sql);
 
@@ -29,7 +29,7 @@ function connect_db(){
     $servername = "localhost";
     $username = "root";
     $password = "1234";
-    $dbname = "part1";
+    $dbname = "part2";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -42,9 +42,9 @@ function create_tables($conn){
 
     $tables = 
 
-        "CREATE TABLE users(id int , name varchar(255) NOT NULL, email varchar(255) NOT NULL UNIQUE, password varchar(255), PRIMARY KEY (id));
+        "CREATE TABLE users_b(id int , name varchar(255) NOT NULL, email varchar(255) NOT NULL UNIQUE, password varchar(255), PRIMARY KEY (id));
 
-        CREATE TABLE bookmarks(website varchar(255) NOT NULL, user_id int NOT NULL, FOREIGN KEY (user_id) REFERENCES users(id), CONSTRAINT one_website UNIQUE (website, user_id));";
+        CREATE TABLE bookmarks(website varchar(255) NOT NULL, user_id int NOT NULL, FOREIGN KEY (user_id) REFERENCES users_b(id), CONSTRAINT one_website UNIQUE (website, user_id));";
     
     if (mysqli_multi_query($conn, $tables) === TRUE) {
         echo "Tables created successfully";
@@ -52,27 +52,27 @@ function create_tables($conn){
         echo "Error creating tables: " . $conn->error;
     }
 
-    populate_tables($conn);
+    // populate_tables($conn);
 }
 
-function populate_tables($conn){
+// function populate_tables($conn){
 
 
-    $query = 
+//     $query = 
     
-    "INSERT INTO courses(course, cid) VALUES ('<course>HTML tutorial</course>', 1);
+//     "INSERT INTO courses(course, cid) VALUES ('<course>HTML tutorial</course>', 1);
     
-    INSERT INTO courses(course, cid) VALUES ('<course>CSS tutorial</course>', 2);
+//     INSERT INTO courses(course, cid) VALUES ('<course>CSS tutorial</course>', 2);
     
-    INSERT INTO courses(course, cid) VALUES ('<course>JS tutorial</course>', 3);
+//     INSERT INTO courses(course, cid) VALUES ('<course>JS tutorial</course>', 3);
     
-    INSERT INTO units(unit, uid, cid) VALUES ('<units>Unit 1, tags</units>, <unit>Unit 2, operations</unit>', 1, 1);
+//     INSERT INTO units(unit, uid, cid) VALUES ('<units>Unit 1, tags</units>, <unit>Unit 2, operations</unit>', 1, 1);
     
     
-    ";
+//     ";
 
-    mysqli_multi_query($conn, $query);
-}
+//     mysqli_multi_query($conn, $query);
+// }
 
 // closing the connection
 function close_connection($conn){
