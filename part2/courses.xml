@@ -19,8 +19,6 @@
           <description>p: Allows us to write a paragraph within the tags, just like a description of a certain thing! &lt;p&gt; description &lt;/p&gt;</description>
           <description>h: We can write our headers in here with the following order from the biggest to the smallest h1, h2, ... , h6. &lt;h2&gt; header &lt;/h2&gt;</description>
           <description>a: This is a very useful tag that we can use to link to other web pages! we have to use the attribute href inorder to provide the link! &lt;a href="http://facebook.com"&gt; link &lt;/a&gt;</description>
-          <!-- <description>img: With this tag we are able to show any image that we'd like, we only need to provide it with a link to the image with the src attribute. &lt;img src="link"&gt;</description> -->
-
           <description>Semantic Elements:</description>
           <description>nav:
             Simply defines navigation links and helps us navigate between different pages. &lt;nav&gt; Navigation Links &lt;/nav&gt;
