@@ -446,7 +446,7 @@
           <description>setRequestHeader(): Adds a label/value pair to the header to be sent</description>
         </lesson>
         <assignment>
-          <description>Create a function and declare an object within it with a random number, then using a for loop increment that number 4 times and if that number is even change the value of the element with id = "result" to even, otherwise odd!</description>
+          <description>Create a function and declare an object within it with a random number, then using a for loop increment that number 4 times and if that number is even change the value of the element with id = "result" to even</description>
         </assignment>
       </unit>
     </units>

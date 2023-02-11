@@ -137,7 +137,7 @@
                     $o3 = htmlspecialchars($row['option_3']);
                     $o4 = htmlspecialchars($row['option_4']);
 
-                    print_r("<p>Q$qid: $question?</p>");
+                    print_r("<p>Q$qid: $question</p>");
 
                     print_r("<input value='$o1' name='$qid' type='radio'>$o1<br>");
                     print_r("<input value='$o2' name='$qid' type='radio'>$o2<br>");
