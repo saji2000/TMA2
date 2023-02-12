@@ -64,6 +64,9 @@
             </p>
           
             <p>In part 2, we welcome the user in the index.php file and then ask them to sign-up/login, and then they are taken to the home.php page which has all the available courses for the student to select from and lastly the course is shown in course.php</p>
+            <p>All the course contents are written in an XML format in the courses.xml file and the schema is in courses.xsd, a more detailed explanation of this is written in the next section.</p>
+
+            <p>Simple parsing of this xml file is done using php XML parser, this is done in db_connection.php function populate_tables(). After being parsed the contents of the courses are inserted into the database in a simple format.</p>
 
             
             <h2>References</h2>
