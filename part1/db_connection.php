@@ -52,27 +52,29 @@ function create_tables($conn){
         echo "Error creating tables: " . $conn->error;
     }
 
-    // populate_tables($conn);
 }
 
-// function populate_tables($conn){
+function populate_tables($conn){
 
 
-//     $query = 
+    $query = 
     
-//     "INSERT INTO courses(course, cid) VALUES ('<course>HTML tutorial</course>', 1);
+    "INSERT INTO users_b(id, name, email, password) VALUES (1, 'sajad', 'sajad@gmail.com', '1234');
     
-//     INSERT INTO courses(course, cid) VALUES ('<course>CSS tutorial</course>', 2);
-    
-//     INSERT INTO courses(course, cid) VALUES ('<course>JS tutorial</course>', 3);
-    
-//     INSERT INTO units(unit, uid, cid) VALUES ('<units>Unit 1, tags</units>, <unit>Unit 2, operations</unit>', 1, 1);
-    
-    
-//     ";
+    INSERT INTO bookmarks(website, user_id) VALUES ('https://facebook.com', 1);
+    INSERT INTO bookmarks(website, user_id) VALUES ('https://instagram.com', 1);
+    INSERT INTO bookmarks(website, user_id) VALUES ('https://twitter.com', 1);
+    INSERT INTO bookmarks(website, user_id) VALUES ('https://reddit.com', 1);
+    INSERT INTO bookmarks(website, user_id) VALUES ('https://google.com', 1);
+    INSERT INTO bookmarks(website, user_id) VALUES ('https://cnn.com', 1);
+    INSERT INTO bookmarks(website, user_id) VALUES ('https://apple.com', 1);
+    INSERT INTO bookmarks(website, user_id) VALUES ('https://cbc.ca', 1);
+    INSERT INTO bookmarks(website, user_id) VALUES ('https://amazon.com', 1);
+    INSERT INTO bookmarks(website, user_id) VALUES ('https://alberta.ca', 1);
+    ";
 
-//     mysqli_multi_query($conn, $query);
-// }
+    mysqli_multi_query($conn, $query);
+}
 
 // closing the connection
 function close_connection($conn){
@@ -90,6 +92,14 @@ function setup_database(){
 
     try {
         create_tables($conn);
+    }
+
+    catch(Exception $e){
+        $conn = connect_db();
+    }
+
+    try {
+        populate_tables($conn);
     }
 
     catch(Exception $e){

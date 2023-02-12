@@ -59,28 +59,6 @@
             exit();
         }
     }
-    
-
-    
-
-    // else{
-    //     $query = "INSERT INTO users(id, name, email, password) VALUES($id, '$name', '$email', '$pass');";
-
-
-    //     while(mysqli_query($conn, $query)==false){
-    //         $id = rand(1, 1000);
-
-    //         $query = "INSERT INTO users VALUES($id, $name, $email, $pass);";
-    //     }
-
-    //     echo " Sign-Up successful ";
-    // }
-    // $email = '';
-    // $pass = '';
-    // $name = '';
-
-
-
     close_connection($conn);
 ?>
 

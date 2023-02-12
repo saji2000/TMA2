@@ -60,42 +60,7 @@
                 ?>
         </div>
 
-        <?php 
-
-
-            $conn = setup_database();
-
-            $id = $_SESSION['id'];
-            $query = "SELECT website FROM bookmarks WHERE user_id = $id;";
-
-            try{
-                $result = mysqli_query($conn, $query);
-            }
-            catch(Exception $e) {
-                echo "error: $e";
-            }
-
-            if(mysqli_num_rows($result) == 0){
-
-                echo " No bookmarks yet ";
-    
-            }
-            else{
-                while($row = mysqli_fetch_array($result)) {
-                    $website = $row['website'];
-                    $website_link = ltrim($website,'https://');
-                    $website_link = ltrim($website_link,'http://');
-                    $website_link = str_replace('/', '', $website_link);
-                    $website_link = str_replace(':', '', $website_link);
-
-                    print("<a href = '$website' target='_blank'>$website_link</a> &nbsp;"); // Print a single column data   
-                }
-            }
-            // }
-
-            close_connection($conn);
-
-        ?>
+        
         </div>
 
         <div> 
@@ -176,6 +141,43 @@
 
                     }
                 ?>
+        </div>
+        <div>
+            <?php 
+
+                $conn = setup_database();
+
+                $id = $_SESSION['id'];
+                $query = "SELECT website FROM bookmarks WHERE user_id = $id;";
+
+                try{
+                    $result = mysqli_query($conn, $query);
+                }
+                catch(Exception $e) {
+                    echo "error: $e";
+                }
+
+                if(mysqli_num_rows($result) == 0){
+
+                    echo " No bookmarks yet ";
+        
+                }
+                else{
+                    while($row = mysqli_fetch_array($result)) {
+                        $website = $row['website'];
+                        // $website_link = ltrim($website,'https://');
+                        // $website_link = ltrim($website_link,'http://');
+                        // $website_link = str_replace('/', '', $website_link);
+                        // $website_link = str_replace(':', '', $website_link);
+
+                        print("<a href = '$website' target='_blank'>$website</a> &nbsp;"); // Print a single column data   
+                    }
+                }
+                // }
+
+                close_connection($conn);
+
+            ?>
         </div>
       </div>
 
