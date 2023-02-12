@@ -31,8 +31,9 @@
       </div>
 
       <div class="description">
+        <div class="websites">
         <h3 class="title">Most Popular Bookmarks</h3>
-        <div class="popular_bookmarks">
+
         <?php 
 
           $conn = setup_database();
@@ -57,12 +58,13 @@
           close_connection($conn);
 
         ?>
-        </div>
+        
 
         <div> 
             <h3>Sign-In: </h3>
                 <a href="sign_in.php">Sign-In</a>
                 <p><strong>Don't have an account?</strong></p><a href="sign_up.php">Sign-Up</a>
+        </div>
         </div>
       </div>
 

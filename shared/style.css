@@ -40,6 +40,30 @@ table {
     background-color: rgb(199, 221, 161);
 }
 
+.websites{
+    border: 5px solid rgb(178, 161, 221);
+    border-radius: 5px;
+    background-color: rgb(161, 221, 199);
+    margin-top: 5px;
+
+}
+
+.box{
+    border: 5px solid rgb(221, 195, 161);
+    border-radius: 5px;
+    background-color: rgb(199, 221, 161);
+    margin-top: 5px;
+}
+
+nav{
+    border: 5px solid rgb(178, 161, 221);
+    border-radius: 5px;
+    background-color: rgb(161, 221, 199);
+    display: inline-block;
+    padding-right: 10px;
+}
+
+
 
 
   

@@ -29,6 +29,7 @@
       <div class="description">
         <h3 class="title">Most Popular Bookmarks</h3>
         <div class="bookmarks" id="bookmarks">
+            <div class="box">
         <h3>Add a new bookmark: </h3>
                 <form method= "POST" name="add_bookmark">
                 <form>
@@ -59,11 +60,12 @@
                     }
                 ?>
         </div>
+        </div>
 
         
         </div>
 
-        <div> 
+        <div class="box"> 
             <h3>Delete a bookmark: </h3>
                 <form method= "POST" name="add_bookmark">
                 <form>
@@ -102,7 +104,7 @@
                     }
                 ?>
         </div>
-        <div> 
+        <div class="box"> 
             <h3>Edit a bookmark: </h3>
                 <form method= "POST" name="edit_bookmark">
                 <form>
@@ -142,7 +144,7 @@
                     }
                 ?>
         </div>
-        <div>
+        <div class="websites">
             <?php 
 
                 $conn = setup_database();
@@ -183,6 +185,7 @@
 
 
     </div>
+    <br>
     <script src="url_valid.js"></script>
   </body>
 </html>
