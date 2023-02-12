@@ -16,8 +16,6 @@
             <li><a href="tma.htm">Home</a></li>
             <li><a href="part1/index.php">Part 1</a></li>
             <li><a href="part2/index.php">Part 2</a></li>
-            <li><a href="part3/part3.html">Part 3</a></li>
-            <li><a href="part4/part4.html">Part 4</a></li>
           </ul>
         </nav>
         <div>
@@ -47,24 +45,25 @@
             <h2>Guide</h2>
             <p>All we need for this project is to have web browser and go the link: <a href="https://sajadassignment2.000webhostapp.com/TMA2/tma.htm">Here</a></p>
             <p>It sometimes says that it is unsafe but the other pages do not have the same problem. I believe the issue is with the hosting company 000webhost which was a simple and free one I chose for this project</p>
-            <p>After entering, you can simply read the documentation tma.html and are also able to navigate to part 1 and part 2 of this project thorugh the navigation bar at the top of the page</p>
+            <p>After entering, you can simply read the documentation tma.htm
+               and are also able to navigate to part 1 and part 2 of this project thorugh the navigation bar at the top of the page</p>
 
-            <h2>Analysis, Design and Documentation</h2>
+            <h2>System Analysis and Design</h2>
 
             <h3>Part 1</h3>
-            <p>In part 1 we mainly used xml and some css to create a personal resume. This part was relatively simple and straightforward, 
-              containting only xml, xsl and xsd</p>
+            <p>In part 1 we mainly used php, html, css and MySQL for the sign-up/login process as well as for inserting, updating and deleting the bookmarks. 
+              We also used Javascript to verify the website addresses. Two functions were used to verify the addresses that are isValidUrl() for checking the domain, url itself and isValidHttpUrl() to check for the https protocol
+            </p>
 
-            <p>Part 2 was a web application that teaches basic concepts about tools that we have learned and used so far in this course and project. 
-              We use javascript extensively in this project, mostly document.getElementById(id) and onclick function to get the elements and the manipulate them.
-              Each unit is just a simple html, css in unit#.html same with quiz#html. But for quizzes we have individually implmeneted them in quiz#.js for that specific quiz!</p>
+            <p>For both Part 1 and Part 2 we used a quite similar code base in the each folder called db_connection.php that simply creates a new database, tables and inserts the values into the database. Lastly it provides a stable
+              connection for us to communicate with the database through php! However, in our hosting server, they did not allow creating a new database or even tables from the db_connection.php file and therefore
+              we had to simply copy paste the SQL command in database.sql (part 2)and db.sql (part 1) in the phpMyAdmin panel of the host.</p>
             
-            <p>We implemented a slidewhow for part 3, this part was mainly focused on Javascript in slideshow.js since it was quite difficult task using event listeners, Ajax and Canvas. 
-              Transitions were the hardest part, I started looking for a library in Canvas or even javascript, this proved to be the wrong approach.
-              I simply used CSS transitions to solve this issue.</p>
+            <p>Again for both part 1 and part 2 sign-up/login were quite similar in their design as there was not much difference between the authentication system for both. Just a simple POST form and connection with the database and some simple php and SQL commands help us 
+              authenticate the user quite easily.
+            </p>
           
-            <p>The calculators in part 4 were relatively simple but a tedious part of the project, it consisted mostly of event listeners and simple calculations. Done in part4.js and par4_compute.js (for the conversion of measurements units) 
-              For the third calculator I chose to use a bmi and bfp calculator for people to evaluate their health since we live in a day and age that obesity is widespread! </p>
+            <p>In part 2, we welcome the user in the index.php file and then ask them to sign-up/login, and then they are taken to the home.php page which has all the available courses for the student to select from and lastly the course is shown in course.php</p>
 
             
             <h2>References</h2>
