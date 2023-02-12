@@ -18,7 +18,7 @@
             <li><a href="part2/index.php">Part 2</a></li>
           </ul>
         </nav>
-        <div>
+        <div class = "websites">
             <h2>Student information</h2>
             <p>Name: Seyed Sajjad Daneshmand</p>
             <p>Course: COMP 466</p>
@@ -29,30 +29,54 @@
             <p>Estimated Hours: 50 hrs</p>
         </div>
         <div>
+          <div class = "box">
             <h2>Project Description</h2>
             <p>In this project consisting of 2 parts we used different tools such as html, css, javascript, xml, MySQL and php to complete this project.</p>
+
+            <h2>Part 1</h2>
 
             <p>In part 1, we implemented a fully functional bookmarking app which users can sign-up/login and input their favourite websites and store them there.
             Furthermore, they are able to edit/delete their bookmarks quite easily. Lastly, in the index.php page we show the most popular bookmarks in our web application!</p>
 
+            <h2>System Analysis and Design</h2>
+            <p>In part 1 we mainly used php, html, css and MySQL for the sign-up/login process as well as for inserting, updating and deleting the bookmarks. 
+              We also used Javascript to verify the website addresses. Two functions were used to verify the addresses that are isValidUrl() for checking the domain, url itself and isValidHttpUrl() to check for the https protocol
+            </p>
+
+            <p>In the file db_connection.php we simply create a new database, tables and inserts the values into the database. Lastly it provides a stable
+              connection for us to communicate with the database through php! However, in our hosting server, they did not allow creating a new database or even tables from the db_connection.php file and therefore
+              we had to simply copy paste the SQL command in db.sql in the phpMyAdmin panel of the host.</p>
+            
+            <p>sign-up/login were quite easiy in their design. Just a simple POST form and connection with the database and some simple php and SQL commands help us 
+              authenticate the user quite easily.
+            </p>
+
+            <p>And adding the bookmarks to the database is done by a simple Insert command after them being verifed with the javascript code that we mentioned earlier. For editing we also use a simple update command and for deleting a delete command is used</p>
+            <p>For the most popular bookmarks we used the COUNT function in SQL to count the number of times each bookmark has been recorded and then in an ascending order we limit them to the number of 10.</p>
+
+            <h2>Database design</h2>
+            <p>The database was initially designed to be seperate for part 1 and 2, however due to the constraint from the host which was we were only able to have one database at a time, we had to have the database shared for part 1 and 2.
+              However, this did not create an issue since we seperated all the tables, here is the list of tables and explanations for them. The SQL command for part 1:
+            </p>
+            <p>users_b: simply the users in the bookmark application which includes their randomly assigned id, and inputted information such as name, email and password.</p>
+            <p>bookmarks: it contains the websites which users have added as bookmark in the field "website" and it has foreign key "user_id" which refers to the id in users_b.</p>
+
+              
+            <h2>Guide</h2>
+            <p>All we need for this project is to have web browser and go to the link: <a href="https://sajadassignment2.000webhostapp.com/TMA2/part1/index.php">Here</a></p>
+            <p>After entering, you can see the most popular bookmarks in the web application and simply sign-up/login. Then you can add your own bookmarks and edit/delete them!</p>
+            <p>The verify button simply verifies if the address is valid, when the add/edit button is disabled just simply verify the address first and then you are able to add/edit. For delete the address must be a part of your bookmarks otherwise an error alert will be shown</p>
+            <p>You are also able to navigate to tma.htm which is called "Home" or go to part 2.</p>
+
+          </div>
+          
+          <div class = "box">
+            <h3>Part 2</h3>
             <p>
               Part 2 was far more complex than part 1 due to the nature of content, in part 2, we were able to develop a simple Web Application with the purpose of
               Teaching people new to the programming with easy concepts and lessons about html, css, javascript, xml and ajax. It note worthy that we simply resused the teaching material
               that was written in Assignment 1. Our users are able to sign-up/login and view the available courses to select. Once selected they are able to view the lessons
               and to take a quiz to test their knowledge at the end.
-            </p>
-              
-            <h2>Guide</h2>
-            <p>All we need for this project is to have web browser and go the link: <a href="https://sajadassignment2.000webhostapp.com/TMA2/tma.htm">Here</a></p>
-            <p>It sometimes says that it is unsafe but the other pages do not have the same problem. I believe the issue is with the hosting company 000webhost which was a simple and free one I chose for this project</p>
-            <p>After entering, you can simply read the documentation tma.htm
-               and are also able to navigate to part 1 and part 2 of this project thorugh the navigation bar at the top of the page</p>
-
-            <h2>System Analysis and Design</h2>
-
-            <h3>Part 1</h3>
-            <p>In part 1 we mainly used php, html, css and MySQL for the sign-up/login process as well as for inserting, updating and deleting the bookmarks. 
-              We also used Javascript to verify the website addresses. Two functions were used to verify the addresses that are isValidUrl() for checking the domain, url itself and isValidHttpUrl() to check for the https protocol
             </p>
 
             <p>For both Part 1 and Part 2 we used a quite similar code base in the each folder called db_connection.php that simply creates a new database, tables and inserts the values into the database. Lastly it provides a stable
@@ -68,9 +92,41 @@
 
             <p>Simple parsing of this xml file is done using php XML parser, this is done in db_connection.php function populate_tables(). After being parsed the contents of the courses are inserted into the database in a simple format.</p>
 
-            
-            <h2>References</h2>
-            <a href="https://www.w3schools.com">w3 school</a><br></br>
+            <p>Once the user selects the course they want to learn, we simply fetch the course contents from the database and display them in order, more from the database design is explained in the later sections in this documentation</p>
+
+            <p>Within the course.php we have two chunks of code, first one is dedicated to loading the units as well as the asssignments and the second chunk of code is for displaying the quiz as well as grading them once the user is finished</p>
+
+            <h2>Educational Markup language</h2>
+            <p>University: This tag simply encompasses the entire learning platforms contents.</p>
+            <p>Course: Course includes all the relevant information about the courses such as units, assignments and quizzes within it. There are multiple courses avaialable in E-University and their conent is from part 2 of Assignment 1.</p>
+            <p>Title: Is used for <b>either the title of the course or the title of the unit within that course</b>, this does not create any confusion since the title of course is outside of the unit family which includes its own title.</p>
+            <p>Units: This tag contains all the units and assignments within the course, since we have multiple units and assignments for each unit in every course.</p>
+            <p>Unit: Contains all the lessons/assignments relevant to a certain unit within the course.</p>
+            <p>Lesson: It has the learning content of the unit within it.</p>
+            <p>Assignment: After every lesson there is an assignment for the student to try and learn the lessons in a hands on approach.</p>
+            <p>Description: Is quite similar to a paragraph, contains information about the unit which student is learning. It can be <b>either a paragraph in a lesson or an assignment</b>.</p>
+            <p>Quiz: This tag has all the questions, options and answers for that quiz which is related to a certain course.</p>
+            <p>Inquiry: The question itself that is asked during the quiz from the student.</p>
+            <p>Option: Is the options that the user able to choose from.</p>
+            <p>Answer: It is the answer to the specific Inquiry, it is simply the option which is correct.</p>
+
+            <h2>Database design</h2>
+            <p>The database was initially designed to be seperate for part 1 and 2, however due to the constraint from the host which was we were only able to have one database at a time, we had to have the database shared for part 1 and 2.
+              However, this did not create an issue since we seperated all the tables, here is the list of tables and explanations for them. The SQL command for each section is found in database.sql (part 2) and db.sql (part 1).
+            </p>
+            <h3>Part 1</h3>
+            <p>users_b: simply the users in the bookmark application which includes their randomly assigned id, and inputted information such as name, email and password.</p>
+            <p>bookmarks: it contains the websites which users have added as bookmark in the field "website" and it has foreign key "user_id" which refers to the id in users_b.</p>
+
+            <h3>Part 2</h3>
+
+          </div>
+
+            <div class = "websites">
+              <h2>References</h2>
+              <a href="https://www.w3schools.com">w3 school</a><br>
+              <a href="https://www.php.net/docs.php">php docs</a><br><br>
+            </div>
         </div>
       </div>
   </body>
