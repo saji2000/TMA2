@@ -71,7 +71,8 @@
           </div>
           
           <div class = "box">
-            <h3>Part 2</h3>
+            <h2>Part 2</h2>
+            
             <p>
               Part 2 was far more complex than part 1 due to the nature of content, in part 2, we were able to develop a simple Web Application with the purpose of
               Teaching people new to the programming with easy concepts and lessons about html, css, javascript, xml and ajax. It note worthy that we simply resused the teaching material
@@ -79,22 +80,19 @@
               and to take a quiz to test their knowledge at the end.
             </p>
 
+            <h2>System Analysis and Design</h2>
+
             <p>For both Part 1 and Part 2 we used a quite similar code base in the each folder called db_connection.php that simply creates a new database, tables and inserts the values into the database. Lastly it provides a stable
               connection for us to communicate with the database through php! However, in our hosting server, they did not allow creating a new database or even tables from the db_connection.php file and therefore
-              we had to simply copy paste the SQL command in database.sql (part 2)and db.sql (part 1) in the phpMyAdmin panel of the host.</p>
-            
+              we had to simply copy paste the SQL command in database.sql in the phpMyAdmin panel of the host.</p>
             <p>Again for both part 1 and part 2 sign-up/login were quite similar in their design as there was not much difference between the authentication system for both. Just a simple POST form and connection with the database and some simple php and SQL commands help us 
               authenticate the user quite easily.
             </p>
-          
             <p>In part 2, we welcome the user in the index.php file and then ask them to sign-up/login, and then they are taken to the home.php page which has all the available courses for the student to select from and lastly the course is shown in course.php</p>
             <p>All the course contents are written in an XML format in the courses.xml file and the schema is in courses.xsd, a more detailed explanation of this is written in the next section.</p>
-
             <p>Simple parsing of this xml file is done using php XML parser, this is done in db_connection.php function populate_tables(). After being parsed the contents of the courses are inserted into the database in a simple format.</p>
-
             <p>Once the user selects the course they want to learn, we simply fetch the course contents from the database and display them in order, more from the database design is explained in the later sections in this documentation</p>
-
-            <p>Within the course.php we have two chunks of code, first one is dedicated to loading the units as well as the asssignments and the second chunk of code is for displaying the quiz as well as grading them once the user is finished</p>
+            <p>Within the course.php we have two chunks of code, first one is dedicated to loading the units as well as the asssignments and the second chunk of code is for displaying the quiz as well as grading them once the user is finished.</p>
 
             <h2>Educational Markup language</h2>
             <p>University: This tag simply encompasses the entire learning platforms contents.</p>
@@ -112,14 +110,11 @@
 
             <h2>Database design</h2>
             <p>The database was initially designed to be seperate for part 1 and 2, however due to the constraint from the host which was we were only able to have one database at a time, we had to have the database shared for part 1 and 2.
-              However, this did not create an issue since we seperated all the tables, here is the list of tables and explanations for them. The SQL command for each section is found in database.sql (part 2) and db.sql (part 1).
+              However, this did not create an issue since we seperated all the tables, here is the list of tables and explanations for them. The SQL command is found in database.sql.
             </p>
-            <h3>Part 1</h3>
-            <p>users_b: simply the users in the bookmark application which includes their randomly assigned id, and inputted information such as name, email and password.</p>
-            <p>bookmarks: it contains the websites which users have added as bookmark in the field "website" and it has foreign key "user_id" which refers to the id in users_b.</p>
-
-            <h3>Part 2</h3>
-
+            <p>users: The users in the E-University which includes their randomly assigned id, and inputted information such as name, email and password.</p>
+            <p>courses: </p>
+            
           </div>
 
             <div class = "websites">
