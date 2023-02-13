@@ -413,7 +413,7 @@
               XSLT uses XPath to find information in an XML document.</description>
         </lesson>
         <assignment>
-          <description>Declare an Array and set the first value as an integer of value 2, then add the first value in the array to the number 5 and output the</description>
+          <description>Create an XML document about course structures in a university and apply XSD as well as XSL to it.</description>
         </assignment>
       </unit>
       <unit>
@@ -431,6 +431,115 @@
 
           <description>new XMLHttpRequest(): Creates a new XMLHttpRequest object</description>
           <description>abort(): Cancels the current request</description>
+          <description>getAllResponseHeaders(): Returns header information</description>
+          <description>getResponseHeader(): Returns specific header information</description>
+          <description>open(method,url,async,user,psw): Specifies the request
+              method: the request type GET or POST
+              url: the file location
+              async: true (asynchronous) or false (synchronous)
+              user: optional user name
+              psw: optional password</description>
+          <description>send(): Sends the request to the server, used for GET requests</description>
+          <description>send(string): Sends the request to the server, used for POST requests</description>
+          <description>setRequestHeader(): Adds a label/value pair to the header to be sent</description>
+        </lesson>
+        <assignment>
+          <description>Create a website that prevents the entire page reloading by using Ajax methodologies for replacing a div within your website.</description>
+        </assignment>
+      </unit>
+    </units>
+    <quiz>
+      <question>
+        <inquiry>What does XML stand for?</inquiry>
+        <option>Extensible Markup Language</option>
+        <option>Excess Markup Language</option>
+        <option>Extensible Machine Language</option>
+        <option>Extensible Machine Line</option>
+        <answer>Extensible Markup Language</answer>
+      </question>
+      <question>
+        <inquiry>Most important reason for using XML instead of HTML?</inquiry>
+        <option>Lower level language and faster compile time</option>
+        <option>Simpler language syntax</option>
+        <option>Reusability of the code</option>
+        <option>More established in the industry</option>
+        <answer>Reusability of the code</answer>
+      </question>
+      <question>
+        <inquiry>Best way to apply styling to XML elements?</inquiry>
+        <option>XSD</option>
+        <option>XSL</option>
+        <option>In-line styling</option>
+        <option>Javascript</option>
+        <answer>XSL</answer>
+      </question>
+      <question>
+        <inquiry>What is Ajax?</inquiry>
+        <option>Ajax  is a set of web development techniques that uses various web technologies on the client-side to create asynchronous web applications.</option>
+        <option>Ajax  is a set of frameworks that uses various web technologies on the client-side to create asynchronous web applications.</option>
+        <option>Ajax  is a set of development techniques that uses various web technologies on the server-side to create synchronous mobile applications.</option>
+        <option>Ajax  is a set of programming languages that uses various web technologies on the client-side to create asynchronous web applications.</option>
+        <answer>Ajax  is a set of web development techniques that uses various web technologies on the client-side to create asynchronous web applications.</answer>
+      </question>
+      <question>
+        <inquiry>What is Https Request?</inquiry>
+        <option>XMLHttpRequest is used to request data from a web server</option>
+        <option>Https request helps with connecting to another file locally</option>
+        <option>Https request is a function that creates a buffer between files</option>
+        <option>XMLHttpsRequest creates a XML request for a css style file</option>
+        <answer>XMLHttpRequest is used to request data from a web server</answer>
+      </question>
+    </quiz>
+  </course>
+
+  <course>
+    <title>
+      SQL tutorial
+    </title>
+    <units>
+      <unit>
+        <title>
+          Unit 1: Introduction and Databases and Tables
+        </title>
+        <lesson>
+          <description>Structured Query Language, abbreviated as SQL is a domain-specific language used in programming and designed 
+            for managing data held in a relational database management system (RDBMS), or for stream processing in a relational data stream management system (RDSMS). It is particularly useful in handling structured data, i.e. data incorporating relations among entities and variables.
+          It is noteworthy that SQL is case insensitive, for example SELECT and select command are no different in practice, however most developers choose to use the uppercase style!</description>
+
+          <description>We are able to create a database or a table using the CREATE command! for example:</description>
+
+          <description>Let's say we want to create a database called "my_db" we can use the following command in our development environment: CREATE DATABASE my_db;</description>
+          <description>Now if we want to create a table called "my_table" with two two columns name and age, we can use the following command in our development environment: CREATE TABLE my_db(name TEXT, age INT);</description>
+          <description>The columns in each table stores the information within it with a specifed type that we declare!</description>          
+
+          <description>
+            In the event that we want to destroy a table or a database we use the command DROP!
+            For example, if we wanted to drop a table we use the command DROP TABLE my_table; and for dropping a database we use the command DROP DATABASE my_db;
+          </description>
+        </lesson>
+        <assignment>
+          <description>Create a database called assignment and create two tables within it with the first one having two columns first name and last name, and for the second one having 3 columns that are id, name and email.</description>
+        </assignment>
+      </unit>
+      <unit>
+        <title>
+          Unit 2: SELECT, INSERT, UPDATE, DELETE
+        </title>
+        <lesson>
+          <description>The SELECT command is very helpful when we want to fetch any data from our database. It is quite simple and easy to use, for example:</description>
+
+          <description>Let's say we have a table called users conating two columns email and password, we can fetch the data in the following manner: </description>
+          <description>SELECT * FROM users; this command will return both the emails and passwords of all the users in the table, if u want to choose only the email or the password you can replace the * with the column name: SELECT email FROM users;</description>
+          <description>However in most cases we don't want the entire column to be returned to us, we want to find a certain user based on certain informations. Let's say you want to find the user with the email : john@gmail.com, we can do this easily 
+            with using a WHERE clause like this: SELECT * FROM users WHERE email = 'john@gmail.com'; we can have multiple conditions like the following: SELECT * FROM users WHERE email = 'john@gmail.com' AND password = '1234'; This is how the login system often works usign SQL!</description>
+
+          <description>INSERT simply adds a new record into the table, for example with the previous table let's say we want to add a new user with the email : 'smith@gmail.com' and password '2345' we can do the following:
+            INSERT INTO users (email, password) VALUES ('smith@gmail.com', '2345');
+          </description>
+          <description>UPDATE command simply modifies an existing record in the table, for example with the record we just inserted into the table, let's change their email! UPDATE users SET email = 'new_smith@gmail.com' WHERE email = 'smith@gmail.com';
+            UPDATE command requires us to give certain condtions in the WHERE clause to specify which record is to be updated.
+          </description>
+          
           <description>getAllResponseHeaders(): Returns header information</description>
           <description>getResponseHeader(): Returns specific header information</description>
           <description>open(method,url,async,user,psw): Specifies the request
