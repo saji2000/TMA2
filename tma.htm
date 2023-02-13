@@ -113,8 +113,16 @@
               However, this did not create an issue since we seperated all the tables, here is the list of tables and explanations for them. The SQL command is found in database.sql.
             </p>
             <p>users: The users in the E-University which includes their randomly assigned id, and inputted information such as name, email and password.</p>
-            <p>courses: </p>
+            <p>courses: Contains the title of the course and a course id that everything related to a course including units, quizzes and assignments are a part of this.</p>
+            <p>units: Is part of a course that includes the lessons and the assignments within that unit, it has a foreign key to the course id in the courses table.</p>
+            <p>descriptions: Is the paragraphs within every unit that is the lesson/teaching part of the course.</p>
+            <p>assignments: assignments are simply the assignments for every unit that helps the students learn the course material.</p>
+            <p>quizzes: It contains the questions, options as well as the answers to the questions for every course.</p>
+            <p><b>Notes:</b> The id for courses, units, descriptions, assignments and quizzes starts at 0 and is incremented by 1, this helps with ordering the course contents based on this numbering system!</p>
             
+            <h2>Parser</h2>
+            <p>It is done in db_connection.php in the populate_tables() function. It starts with the course titles and ids, then the units along with the ids, after that with the descriptions and assignments and lastly the quizzes.</p>
+
           </div>
 
             <div class = "websites">
