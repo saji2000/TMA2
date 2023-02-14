@@ -539,64 +539,56 @@
           <description>UPDATE command simply modifies an existing record in the table, for example with the record we just inserted into the table, let's change their email! UPDATE users SET email = 'new_smith@gmail.com' WHERE email = 'smith@gmail.com';
             UPDATE command requires us to give certain condtions in the WHERE clause to specify which record is to be updated.
           </description>
-          
-          <description>getAllResponseHeaders(): Returns header information</description>
-          <description>getResponseHeader(): Returns specific header information</description>
-          <description>open(method,url,async,user,psw): Specifies the request
-              method: the request type GET or POST
-              url: the file location
-              async: true (asynchronous) or false (synchronous)
-              user: optional user name
-              psw: optional password</description>
-          <description>send(): Sends the request to the server, used for GET requests</description>
-          <description>send(string): Sends the request to the server, used for POST requests</description>
-          <description>setRequestHeader(): Adds a label/value pair to the header to be sent</description>
+
+          <description>DELETE allows us to delete a record from the table, for example with the record we just modified in table, let's delete the record: DELETE FROM users WHERE email = 'new_smith@gmail.com';
+            Just like the UPDATE command, DELETE requires us to give certain condtions in the WHERE clause to specify which record is to be deleted.
+          </description>
         </lesson>
         <assignment>
-          <description>Create a function and declare an object within it with a random number, then using a for loop increment that number 4 times and if that number is even change the value of the element with id = "result" to even</description>
+          <description>ENTER a record in the tables you previously created in the last assignment and update the same record and then delete that record.</description>
         </assignment>
       </unit>
     </units>
     <quiz>
       <question>
-        <inquiry>What does XML stand for?</inquiry>
-        <option>Extensible Markup Language</option>
-        <option>Excess Markup Language</option>
-        <option>Extensible Machine Language</option>
-        <option>Extensible Machine Line</option>
-        <answer>Extensible Markup Language</answer>
+        <inquiry>What does SQL stand for?</inquiry>
+        <option>Structured Question Language</option>
+        <option>Structured Query Long</option>
+        <option>Structured Query Language</option>
+        <option>Simple Query Language</option>
+        <answer>Structured Query Language</answer>
       </question>
       <question>
-        <inquiry>Most important reason for using XML instead of HTML?</inquiry>
-        <option>Lower level language and faster compile time</option>
-        <option>Simpler language syntax</option>
-        <option>Reusability of the code</option>
-        <option>More established in the industry</option>
-        <answer>Reusability of the code</answer>
+        <inquiry>How to add a new record to the table users in SQL?</inquiry>
+        <option>ADD TO users RECORD (...)</option>
+        <option>INSERT INTO users VALUES (...)</option>
+        <option>UPDATE users VALUES (...)</option>
+        <option>ENTER INTO users VALUES (...)</option>
+        <answer>INSERT INTO users VALUES (...)</answer>
       </question>
       <question>
-        <inquiry>Best way to apply styling to XML elements?</inquiry>
-        <option>XSD</option>
-        <option>XSL</option>
-        <option>In-line styling</option>
-        <option>Javascript</option>
-        <answer>XSL</answer>
+        <inquiry>How can we create a new database called my_db in SQL?</inquiry>
+        <option>CREATE DB name="my_db"</option>
+        <option>NEW DATABASE my_db</option>
+        <option>BUILD DB my_db</option>
+        <option>CREATE DATABASE my_db</option>
+        <answer>CREATE DATABASE my_db</answer>
       </question>
       <question>
-        <inquiry>What is Ajax?</inquiry>
-        <option>Ajax  is a set of web development techniques that uses various web technologies on the client-side to create asynchronous web applications.</option>
-        <option>Ajax  is a set of frameworks that uses various web technologies on the client-side to create asynchronous web applications.</option>
-        <option>Ajax  is a set of development techniques that uses various web technologies on the server-side to create synchronous mobile applications.</option>
-        <option>Ajax  is a set of programming languages that uses various web technologies on the client-side to create asynchronous web applications.</option>
-        <answer>Ajax  is a set of web development techniques that uses various web technologies on the client-side to create asynchronous web applications.</answer>
+        <inquiry>How can we verify a user with a SQL command only having their username and password?</inquiry>
+        <option>SELECT * FROM table WHERE username = "username" AND password = "password"</option>
+        <option>CHECK FROM table WHERE username = "username" AND password = "password"</option>
+        <option>VERIFY IN table WHERE username = "username" AND password = "password"</option>
+        <option>INSERT * INTO table (username, password)</option>
+        <answer>SELECT * FROM table WHERE username = "username" AND password = "password"</answer>
       </question>
       <question>
-        <inquiry>What is Https Request?</inquiry>
-        <option>XMLHttpRequest is used to request data from a web server</option>
-        <option>Https request helps with connecting to another file locally</option>
-        <option>Https request is a function that creates a buffer between files</option>
-        <option>XMLHttpsRequest creates a XML request for a css style file</option>
-        <answer>XMLHttpRequest is used to request data from a web server</answer>
+        <inquiry>How can we create a table called my_app with a SQL command that has 3 columns which are (id, username, password)?</inquiry>
+        <option>CREATE TABLE my_app (id, username, password)</option>
+        <option>CREATE TABLE my_app (id INT, username TEXT, password TEXT)</option>
+        <option>CREATE APP my_app (id, username, password)</option>
+        <option>BUILD TABLE my_app (id INT, username TEXT, password TEXT)</option>
+        <answer>CREATE TABLE my_app (id INT, username TEXT, password TEXT)</answer>
       </question>
     </quiz>
   </course>
