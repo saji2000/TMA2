@@ -6,7 +6,7 @@
 ?>
 <html>
 	<head>
-		<title>Sign-In/Sign-Up</title>
+		<title>S-Bookmarks</title>
 		<link rel="stylesheet" type="text/css" href="../shared/style.css">
 		<meta charset="utf-8">
 	</head>

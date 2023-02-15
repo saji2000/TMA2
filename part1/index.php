@@ -32,6 +32,7 @@
 
       <div class="description">
         <div class="websites">
+        <p>Welcome to the S-Bookmarks, in here you can add/edit or delete your already existing bookmarks of the online websites!</p>
         <h3 class="title">Most Popular Bookmarks</h3>
 
         <?php 
