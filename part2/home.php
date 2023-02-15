@@ -16,6 +16,8 @@
     <meta charset="UTF-8" />
     <title>E-University</title>
     <link rel="stylesheet" href="../shared/style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../shared/E-University.png" />
+
   </head>
   <body>
    

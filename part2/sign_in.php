@@ -8,6 +8,7 @@
 		<title>Sign-In/Sign-Up</title>
 		<link rel="stylesheet" type="text/css" href="../shared/style.css">
 		<meta charset="utf-8">
+        <link rel="shortcut icon" type="image/x-icon" href="../shared/E-University.png" />
 	</head>
 	
 	<body>
