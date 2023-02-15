@@ -5,9 +5,10 @@
 ?>
 <html>
 	<head>
-		<title>S-Bookmarks</title>
+		<title>Beyond-Bookmarks</title>
 		<link rel="stylesheet" type="text/css" href="../shared/style.css">
 		<meta charset="utf-8">
+        <link rel="shortcut icon" type="image/x-icon" href="../shared/logo.png" />
 	</head>
 	
 	<body>

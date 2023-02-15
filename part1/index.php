@@ -13,8 +13,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Bookmarks (Part 1)</title>
+    <title>Beyond-Bookmarks</title>
     <link rel="stylesheet" href="../shared/style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../shared/logo.png" />
   </head>
   <body>
    
