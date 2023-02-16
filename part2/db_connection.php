@@ -107,9 +107,8 @@ function populate_tables($conn){
                 ++$did;
                 $query = "INSERT INTO descriptions(description, did, uid, cid) VALUES ('$description',$did, $uid, $cid);";
                 if($cid == 5  && $uid == 1){
-                    echo "cid: $cid, uid: $uid, did: $did and description: $description";
+                    echo "cid: $cid, uid: $uid, did: $did. ";
                     if(!mysqli_multi_query($conn, $query)){
-                        echo "Error cid: $cid, uid: $uid, did: $did and description: $description";
                     }
                     echo mysqli_error($conn);
                 }
