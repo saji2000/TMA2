@@ -523,19 +523,19 @@
           Unit 2: SELECT, INSERT, UPDATE, DELETE
         </title>
         <lesson>
+          <description>Now the INSERT simply adds a new record into the table, for example with the previous table let's say we want to add a new user with the email : 'smith@gmail.com' and password '2345' we can do the following:</description>
+          <description>INSERT INTO users (email, password) VALUES ('smith@gmail.com', '2345')</description>
+          
+          <description>using the UPDATE command simply modifies an existing record in the table, for example with the record we just inserted into the table, let's change their email! UPDATE users SET email = 'new_smith@gmail.com' WHERE email = 'smith@gmail.com';</description>
+          <description>UPDATE command requires us to give certain condtions in the WHERE clause to specify which record is to be updated.</description>
+          
+          <description>The DELETE allows us to delete a record from the table, for example with the record we just modified in table, let's delete the record: DELETE FROM users WHERE email = 'new_smith@gmail.com';</description>
+          <description>Just like the UPDATE command, DELETE requires us to give certain condtions in the WHERE clause to specify which record is to be deleted.</description>
+          
           <description>The SELECT command is very helpful when we want to fetch any data from our database. It is quite simple and easy to use, for example:</description>
-          <description>Let's say we have a table called users conating two columns email and password, we can fetch the data in the following manner: </description>
+          <description>Let's say we have a table called users conating two columns email and password, we can fetch the data in the following manner:</description>
           <description>SELECT * FROM users; this command will return both the emails and passwords of all the users in the table, if you want to choose only the email or the password you can replace the * with the column name: SELECT email FROM users;</description>
           <description>However in most cases we don't want the entire column to be returned to us, we want to find a certain user based on certain informations. Let's say you want to find the user with the email john@gmail.com</description> 
-          <description>INSERT simply adds a new record into the table, for example with the previous table let's say we want to add a new user with the email : 'smith@gmail.com' and password '2345' we can do the following:
-            INSERT INTO users (email, password) VALUES ('smith@gmail.com', '2345')
-          </description>
-          <description>UPDATE command simply modifies an existing record in the table, for example with the record we just inserted into the table, let's change their email! UPDATE users SET email = 'new_smith@gmail.com' WHERE email = 'smith@gmail.com';
-            UPDATE command requires us to give certain condtions in the WHERE clause to specify which record is to be updated.
-          </description>
-          <description>DELETE allows us to delete a record from the table, for example with the record we just modified in table, let's delete the record: DELETE FROM users WHERE email = 'new_smith@gmail.com';
-            Just like the UPDATE command, DELETE requires us to give certain condtions in the WHERE clause to specify which record is to be deleted.
-          </description>
         </lesson>
         <assignment>
           <description>ENTER a record in the tables you previously created in the last assignment and update the same record and then delete that record.</description>
