@@ -178,9 +178,10 @@
                         $x++;
                     }
                     
+                    $grade_percent = ($grade / $q_num) * 100;
 
-                    print_r("<h4>Your grade is $grade out of $q_num</h4>");
-                    print_r("<script>alert('Your grade is $grade out of $q_num')</script>");
+                    print_r("<h4>Your grade is $grade out of $q_num, $grade_percent%</h4>");
+                    print_r("<script>alert('Your grade is $grade out of $q_num, $grade_percent%')</script>");
                 }
 
 
