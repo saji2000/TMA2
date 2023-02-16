@@ -1,10 +1,6 @@
-DROP DATABASE IF EXISTS part2;
-
-CREATE DATABASE part2;
-
 CREATE TABLE users_b(id int , name varchar(255), email varchar(255), password varchar(255), PRIMARY KEY (id));
     
-CREATE TABLE bookmarks(website varchar(255), user_id int, FOREIGN KEY (user_id) REFERENCES users(id));
+CREATE TABLE bookmarks(website varchar(255), user_id int, FOREIGN KEY (user_id) REFERENCES users_b(id), CONSTRAINT one_website UNIQUE (user_id, website));
 
 INSERT INTO users_b(id, name, email, password) VALUES (1, 'sajad', 'sajad@gmail.com', '1234');
     
