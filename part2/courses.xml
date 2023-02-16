@@ -531,7 +531,8 @@
           <description>Let's say we have a table called users conating two columns email and password, we can fetch the data in the following manner: </description>
           <description>SELECT * FROM users; this command will return both the emails and passwords of all the users in the table, if u want to choose only the email or the password you can replace the * with the column name: SELECT email FROM users;</description>
           <description>However in most cases we don't want the entire column to be returned to us, we want to find a certain user based on certain informations. Let's say you want to find the user with the email : john@gmail.com, we can do this easily 
-            with using a WHERE clause like this: SELECT * FROM users WHERE email = 'john@gmail.com'; we can have multiple conditions like the following: SELECT * FROM users WHERE email = 'john@gmail.com' AND password = '1234'; This is how the login system often works usign SQL!</description>
+            with using a WHERE clause like this: </description>
+          <description>SELECT * FROM users WHERE email = 'john@gmail.com'; we can have multiple conditions like the following: SELECT * FROM users WHERE email = 'john@gmail.com' AND password = '1234'; This is how the login system often works usign SQL!</description>
 
           <description>INSERT simply adds a new record into the table, for example with the previous table let's say we want to add a new user with the email : 'smith@gmail.com' and password '2345' we can do the following:
             INSERT INTO users (email, password) VALUES ('smith@gmail.com', '2345');

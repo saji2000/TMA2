@@ -161,9 +161,13 @@
                     
                     $x = 1;
 
+                    $answers = array();
+
                     while($row = mysqli_fetch_array($result)) {
 
                         $ans = trim($row['answer']);
+
+                        $answers[] = $ans;
 
                         if(isset($_POST["$x"])){
                             $selected = $_POST["$x"];
@@ -182,6 +186,14 @@
 
                     print_r("<h4>Your grade is $grade out of $q_num, $grade_percent%</h4>");
                     print_r("<script>alert('Your grade is $grade out of $q_num, $grade_percent%')</script>");
+
+                    for($i = 0; $i < $q_num; $i++){
+                      $result = $answers[$i];
+
+                      $result = htmlspecialchars($result, ENT_NOQUOTES);
+                      $num = $i+1;
+                      print_r("<p>Answer for Q$num: $result</p>");
+                    }
                 }
 
 
