@@ -5,7 +5,7 @@
 ?>
 <html>
 	<head>
-		<title>Beyond-Bookmarks</title>
+		<title>Beyond</title>
 		<link rel="stylesheet" type="text/css" href="../shared/style.css">
 		<meta charset="utf-8">
         <link rel="shortcut icon" type="image/x-icon" href="../shared/logo.png" />

@@ -9,7 +9,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Beyond-Bookmarks</title>
+    <title>Beyond</title>
     <link rel="stylesheet" href="../shared/style.css" />
     <link rel="shortcut icon" type="image/x-icon" href="../shared/logo.png" />
   </head>

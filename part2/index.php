@@ -34,15 +34,17 @@
       </div>
 
       <div class="description">
-        <h3 class="title">E-University</h3>
-        <div>
-          Welcome to the E-University, in here you can choose from our offered courses to start learning about 
-          web development and programming concepts
-        </div>
-        <div> 
-            <h3>Sign-In: </h3>
-                <a href="sign_in.php">Sign-In</a>
-                <p><strong>Don't have an account?</strong></p><a href="sign_up.php">Sign-Up</a>
+        <div class="websites">
+          <h3 class="title">E-University</h3>
+          <div>
+            Welcome to the E-University, in here you can choose from our offered courses to start learning about 
+            web development and programming concepts
+          </div>
+          <div> 
+              <h3>Sign-In: </h3>
+                  <a href="sign_in.php">Sign-In</a>
+                  <p><strong>Don't have an account?</strong></p><a href="sign_up.php">Sign-Up</a>
+          </div>
         </div>
       </div>
 
