@@ -6,4 +6,5 @@
           
           <description>The DELETE allows us to delete a record from the table, for example with the record we just modified in table, let's delete the record: DELETE FROM users WHERE email = 'new_smith@gmail.com';</description>
           <description>Just like the UPDATE command, DELETE requires us to give certain condtions in the WHERE clause to specify which record is to be deleted.</description>
-          
+          <description>However in most cases we don't want the entire column to be returned to us, we want to find a certain user based on certain informations. Let's say you want to find the user with the email john@gmail.com</description> 
+          <description>we can do this easily with using a WHERE clause like this: SELECT * FROM users WHERE email = 'john@gmail.com'; we can have multiple conditions like the following: SELECT * FROM users WHERE email = 'john@gmail.com' AND password = '1234'; </description>

@@ -520,15 +520,11 @@
       </unit>
       <unit>
         <title>
-          Unit 2: SELECT, INSERT, UPDATE, DELETE
+          Unit 2: SELECT
         </title>
         <lesson>
-          
           <description>The SELECT command is very helpful when we want to fetch any data from our database. It is quite simple and easy to use, for example:</description>
-          <description>Let's say we have a table called users conating two columns email and password, we can fetch the data in the following manner:</description>
           <description>SELECT * FROM users; this command will return both the emails and passwords of all the users in the table, if you want to choose only the email or the password you can replace the * with the column name: SELECT email FROM users;</description>
-          <description>However in most cases we don't want the entire column to be returned to us, we want to find a certain user based on certain informations. Let's say you want to find the user with the email john@gmail.com</description> 
-          <description>we can do this easily with using a WHERE clause like this: SELECT * FROM users WHERE email = 'john@gmail.com'; we can have multiple conditions like the following: SELECT * FROM users WHERE email = 'john@gmail.com' AND password = '1234'; </description>
         </lesson>
         <assignment>
           <description>ENTER a record in the tables you previously created in the last assignment and update the same record and then delete that record.</description>
