@@ -14,3 +14,5 @@ INSERT INTO bookmarks(website, user_id) VALUES ('https://apple.com', 1);
 INSERT INTO bookmarks(website, user_id) VALUES ('https://cbc.ca', 1);
 INSERT INTO bookmarks(website, user_id) VALUES ('https://amazon.com', 1);
 INSERT INTO bookmarks(website, user_id) VALUES ('https://alberta.ca', 1);
+
+SELECT website, COUNT(website) AS count FROM bookmarks GROUP BY website ORDER BY count DESC LIMIT 10;

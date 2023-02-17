@@ -47,10 +47,6 @@
          
           while($row = mysqli_fetch_array($result)) {
               $website = $row['website'];
-              // $website_link = ltrim($website,'https://');
-              // $website_link = ltrim($website_link,'http://');
-              // $website_link = str_replace('/', '', $website_link);
-              // $website_link = str_replace(':', '', $website_link);
 
               print("<a href = '$website' target='_blank'>$website</a> &nbsp;"); // Print a single column data
                   
