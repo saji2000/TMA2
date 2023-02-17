@@ -85,21 +85,22 @@ function close_connection($conn){
 }
 
 function setup_database(){
-    try{
-        $conn = create_db();
-    }
+    // try{
+    //     $conn = create_db();
+    // }
 
-    catch(Exception $e){
-        $conn = connect_db();
-    }
+    // catch(Exception $e){
+    //     $conn = connect_db();
+    // }
 
-    try {
-        create_tables($conn);
-    }
+    // try {
+    //     create_tables($conn);
+    // }
 
-    catch(Exception $e){
-        $conn = connect_db();
-    }
+    // catch(Exception $e){
+    //     $conn = connect_db();
+    // }
+    $conn = connect_db();
 
     try {
         populate_tables($conn);
